@@ -1,9 +1,24 @@
 {
-  "created": 1591025986261,
+  "created": 1591026143949,
   "name": "enbw.dev-revert",
   "from": "enbw.dev",
   "to": "enbw.dev__temp",
   "operations": [
+    {
+      "type": "deletion",
+      "order": -1,
+      "resource": "agents",
+      "targetItem": {
+        "sourceId": "ffe24ca500ff4430b8d4ba2a79d12079",
+        "agentSource": "internal",
+        "name": "EVIL AGENT",
+        "number": null,
+        "enabled": false,
+        "email": null,
+        "tags": [],
+        "@id": "b44f5b63737a4972b93fd9dd7b440b2c"
+      }
+    },
     {
       "type": "update",
       "order": 2,
@@ -42,7 +57,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "agentId": -2
         },
         "trigger": null,
@@ -143,7 +158,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": null,
           "comment": null,
@@ -277,7 +292,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": "Outbound call to {call.to.number}",
           "comment": "You connected to the consumer {call.to.number} successfully",
@@ -399,7 +414,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "agentId": -2
         },
         "trigger": null,
@@ -500,7 +515,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": null,
           "comment": null,
@@ -634,7 +649,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": "Incoming call from {zendesk.enduser.name}",
           "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
@@ -756,7 +771,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "expression": "consumer.number"
         },
         "trigger": null,
