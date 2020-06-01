@@ -3,6 +3,36 @@
   "url": "/api/v2/events/triggers",
   "items": [
     {
+      "label": "CREATED ON DEV",
+      "priority": 12,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "message": "foo bar"
+      },
+      "trigger": {
+        "id": "d78722f793144889bf319db8eb84f7df",
+        "name": "Always",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "AGENT",
+        "name": "presence.change",
+        "code": "agent.presence.change",
+        "label": ""
+      },
+      "action": {
+        "type": "LOG",
+        "name": "message",
+        "code": "log.message",
+        "label": "",
+        "provider": "default",
+        "group": "log"
+      },
+      "@id": "ccbf50dbddc14fb986f15f89b8a0f11a"
+    },
+    {
       "label": "ZD-OB: Push ticket to agent",
       "priority": 3748,
       "enabled": true,

@@ -4,13 +4,14 @@ set -e
 
 STAMP=$(date --iso-8601=seconds)
 
-# jobs
-DEPLOY_TO_PROD="enbw.dev-to-enbw.staging"
-BACKUP="enbw.dev-backup"
-
 
 # commit artifacts to version control
-commit() { git add . && git commit -m $STAMP ; }
+commit() {
+
+  echo "committing current IVR states..."
+  git add . && git commit -m $STAMP
+
+}
 
 
 # clean and pull current IVR state for all envs
@@ -18,14 +19,26 @@ pull_all() {
 
   for i in ./data/envs/*; do
 
+    local ENV=$(echo $i | cut -d'/' -f 4)
+
+    echo "pulling ${ENV}..."
     rm -rf $i
-    babelforce-ivr-sync get --env $(echo $i | cut -d'/' -f 4)
+    babelforce-ivr-sync get --env $ENV
 
   done
 
-  echo "all IVRs have been reset!"
+  echo "all IVR states have been pulled"
 }
 
-pull_all
 
+case $1 in
 
+  # backup process is to pull latest state
+  # of IVRs and put into version control
+  "backup")
+
+    pull_all
+    commit
+    ;;
+
+esac
