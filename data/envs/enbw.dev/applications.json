@@ -12,35 +12,10 @@
         "welcome"
       ],
       "settings": {
-        "flowEndApplication": {
-          "id": "8cf25b476bab495d8a3374ea2c863390"
-        },
+        "flowEndApplication": null,
         "prompts": [],
         "enableSwitching": true,
-        "triggers": [
-          {
-            "trigger": {
-              "invert": false,
-              "enabled": true,
-              "id": "0d4fe6be9f07475c89bea9bb5884488c"
-            },
-            "application": {
-              "id": "f40f44fa0d8b427189248ec4ca3f6d51"
-            },
-            "priority": 400
-          },
-          {
-            "trigger": {
-              "invert": false,
-              "enabled": true,
-              "id": "39e67227e74d44dfa0224829f8cc14b1"
-            },
-            "application": {
-              "id": "f40f44fa0d8b427189248ec4ca3f6d51"
-            },
-            "priority": 300
-          }
-        ]
+        "triggers": []
       },
       "@id": "fc2e37b9f20f442c8d098e1648aae015"
     },
@@ -53,9 +28,7 @@
         "welcome"
       ],
       "settings": {
-        "flowEndApplication": {
-          "id": "03b6bddcc9a54670973c799e29335cb1"
-        },
+        "flowEndApplication": null,
         "prompts": [
           {
             "key": "prompt-0",
@@ -77,9 +50,7 @@
         "welcome"
       ],
       "settings": {
-        "flowEndApplication": {
-          "id": "f40f44fa0d8b427189248ec4ca3f6d51"
-        },
+        "flowEndApplication": null,
         "prompts": [
           {
             "key": "prompt-0",
