@@ -3,6 +3,36 @@
   "url": "/api/v2/events/triggers",
   "items": [
     {
+      "label": "I WILL BREAK IT",
+      "priority": 2,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "message": "sfsdfsdfsdfdsf"
+      },
+      "trigger": {
+        "id": "2cf9fc21425d44f4aa6ddae1f8495d7a",
+        "name": "Maximum queue wait time reached",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "AGENT",
+        "name": "presence.change",
+        "code": "agent.presence.change",
+        "label": ""
+      },
+      "action": {
+        "type": "LOG",
+        "name": "message",
+        "code": "log.message",
+        "label": "",
+        "provider": "default",
+        "group": "log"
+      },
+      "@id": "ab3203aa7684496ba91337e8ac06b2e6"
+    },
+    {
       "label": "CREATED ON DEV",
       "priority": 12,
       "enabled": true,
