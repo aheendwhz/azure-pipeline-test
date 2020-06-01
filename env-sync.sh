@@ -2,7 +2,7 @@
 
 set -e
 
-STAMP=$(date --iso-8601=seconds)
+STAMP=$(date +%s)
 
 _print() { echo -e "\e[36;1m${1}\e[0m"; }
 
@@ -40,6 +40,13 @@ case $1 in
 
     pull_all
     commit
+    ;;
+
+  "rollback")
+
+    # hard-reset 1 commit & re-apply states
+    _print "rolling back to last IVR state versions..."
+    git reset --hard HEAD~1
     ;;
 
 esac
