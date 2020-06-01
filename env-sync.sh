@@ -35,7 +35,7 @@ pull_all() {
 case $1 in
 
   # pull latest state of IVRs and version them
-  "backup")
+  "sync")
 
     pull_all && commit
     ;;
