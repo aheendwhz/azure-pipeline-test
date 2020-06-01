@@ -1,0 +1,105 @@
+{
+  "resource": "prompts",
+  "url": "/api/v2/prompts",
+  "items": [
+    {
+      "label": "welcome-only-no-agents-enabledwelcome_justcompanyandbrandingmessage",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/welcome-only-no-agents-enabled/welcome_justcompanyandbrandingmessage",
+      "duration": 5159,
+      "@id": "6f468659aec1430782dd016828799308"
+    },
+    {
+      "label": "welcome-agents-enabledwelcome_brandmsg_someoneavailinamoment",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/welcome-agents-enabled/welcome_brandmsg_someoneavailinamoment",
+      "duration": 9024,
+      "@id": "29cdf34299614b78ba447fb110a466eb"
+    },
+    {
+      "label": "sorry-no-one-available-try-later-goodbyesry_allteambusyonthephone",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/sorry-no-one-available-try-later-goodbye/sry_allteambusyonthephone",
+      "duration": 4320,
+      "@id": "4acbfed6306847a3b8d5fde43f68c172"
+    },
+    {
+      "label": "sorry-no-one-available-try-later-goodbyegoodbye-trylaterortryweb",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/sorry-no-one-available-try-later-goodbye/goodbye-trylaterortryweb",
+      "duration": 9600,
+      "@id": "8b1e0cc291474dc888fceabfe4d9d18e"
+    },
+    {
+      "label": "looped-waiting-audiobell2",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/looped-waiting-audio/bell2",
+      "duration": 10240,
+      "@id": "48dce5bd4e3a4d07800afc0afda28fdd"
+    },
+    {
+      "label": "looped-waiting-audio4seq-queue_group1_partB",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/looped-waiting-audio/4seq-queue_group1_partB",
+      "duration": 3840,
+      "@id": "047564c5908e452787abd3893e53424f"
+    },
+    {
+      "label": "looped-waiting-audio3seq-queue_group1_partA",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/looped-waiting-audio/3seq-queue_group1_partA",
+      "duration": 3360,
+      "@id": "7d40961a69d14ca19505b1d497c8ac6e"
+    },
+    {
+      "label": "looped-waiting-audio2seq-greeting_group2_partB",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/looped-waiting-audio/2seq-greeting_group2_partB",
+      "duration": 3360,
+      "@id": "7d32cf6ba5ef43558ee300deb83f901d"
+    },
+    {
+      "label": "chime-for-agentschimebar_short",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/chime-for-agents/chimebar_short",
+      "duration": 2374,
+      "@id": "bd12aacc532f4492a1a4bcf07c57afed"
+    },
+    {
+      "label": "call-flow-for-call-queuewelcome_justcompanyandbrandingmessage",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/call-flow-for-call-queue/welcome_justcompanyandbrandingmessage",
+      "duration": 5159,
+      "@id": "96f9845db2884edead43dd1fd9ed6852"
+    },
+    {
+      "label": "call-flow-for-call-queuewelcome_brandmsg_someoneavailinamoment",
+      "text": null,
+      "locale": "en",
+      "default": true,
+      "key": "babel-pro/call-flow-for-call-queue/welcome_brandmsg_someoneavailinamoment",
+      "duration": 9024,
+      "@id": "4c8af6a1f0ba4fbfb47723d4649e9a1f"
+    }
+  ]
+}

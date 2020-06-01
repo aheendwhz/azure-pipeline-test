@@ -1,0 +1,38 @@
+{
+  "resource": "applications/actions",
+  "url": "/api/v2/applications/:id/actions",
+  "items": [
+    {
+      "@parentId": "fb80ad8502c24fb799bafd2dba664784",
+      "label": "Leave queue after max wait time",
+      "position": "POST",
+      "priority": 1,
+      "enabled": true,
+      "action": {
+        "type": "QUEUE",
+        "name": "leave",
+        "code": "queue.leave",
+        "label": "",
+        "provider": "default",
+        "group": "queue"
+      },
+      "trigger": {
+        "id": "2cf9fc21425d44f4aa6ddae1f8495d7a",
+        "name": "Maximum queue wait time reached",
+        "type": "ALL",
+        "conditions": [
+          {
+            "expression": "queue.waitTime",
+            "operator": "GE",
+            "expectation": "300"
+          }
+        ]
+      },
+      "options": {
+        "timeout": 15000
+      },
+      "invertTrigger": false,
+      "@id": "9143c17d05b74815a7e45b404c240ba9"
+    }
+  ]
+}

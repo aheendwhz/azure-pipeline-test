@@ -1,0 +1,73 @@
+{
+  "created": 1591006797623,
+  "name": "enbw.dev-to-enbw.staging",
+  "from": "enbw.dev",
+  "to": "enbw.staging",
+  "operations": [
+    {
+      "type": "addition",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "CREATED ON DEV",
+        "priority": 12,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "message": "foo bar"
+        },
+        "trigger": {
+          "id": "494d284cf7c9425b8510ccd4189dc16c",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "AGENT",
+          "name": "presence.change",
+          "code": "agent.presence.change",
+          "label": ""
+        },
+        "action": {
+          "type": "LOG",
+          "name": "message",
+          "code": "log.message",
+          "label": "",
+          "provider": "default",
+          "group": "log"
+        },
+        "@id": "8cc989441ca749efacd9e11720659d18"
+      },
+      "body": {
+        "label": "CREATED ON DEV",
+        "priority": 12,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "message": "foo bar"
+        },
+        "trigger": {
+          "id": "d78722f793144889bf319db8eb84f7df",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "AGENT",
+          "name": "presence.change",
+          "code": "agent.presence.change",
+          "label": ""
+        },
+        "action": {
+          "type": "LOG",
+          "name": "message",
+          "code": "log.message",
+          "label": "",
+          "provider": "default",
+          "group": "log"
+        },
+        "@id": "8cc989441ca749efacd9e11720659d18"
+      }
+    }
+  ]
+}

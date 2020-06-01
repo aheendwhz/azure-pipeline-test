@@ -1,0 +1,18 @@
+{
+  "resource": "settings/telephony/agent.recording",
+  "url": "/api/v2/settings/telephony/agent.recording",
+  "items": [
+    {
+      "scope": "telephony",
+      "key": "agent.recording",
+      "data": {
+        "hideRecordingUi": false,
+        "allowDelete": false,
+        "tag": "flagged",
+        "availableTags": [
+          "flagged"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "resource": "settings/telephony/agent.wrapup",
+  "url": "/api/v2/settings/telephony/agent.wrapup",
+  "items": [
+    {
+      "scope": "telephony",
+      "key": "agent.wrapup",
+      "data": {
+        "cancelWrapUp": false,
+        "extendWrapUp": false,
+        "maxExtension": 120
+      }
+    }
+  ]
+}

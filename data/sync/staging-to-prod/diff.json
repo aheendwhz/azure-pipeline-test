@@ -1,0 +1,2764 @@
+{
+  "created": 1590753548670,
+  "name": "staging-to-prod",
+  "from": "staging",
+  "to": "production",
+  "operations": [
+    {
+      "type": "addition",
+      "order": -1,
+      "resource": "integrations",
+      "sourceItem": {
+        "type": "CUSTOM",
+        "provider": "freshdesk",
+        "name": "freshdesk",
+        "color": "#f014c7",
+        "label": "SYNC TEST (created on staging)",
+        "enabled": true,
+        "config": {
+          "baseUrl": null,
+          "defaults": {
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "contentType": "application/json",
+            "params": null,
+            "method": "get"
+          },
+          "auth": {
+            "type": "basic",
+            "oauth2": null,
+            "basic": {
+              "password": "X",
+              "username": ":context.api_key"
+            },
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "contentType": "application/json",
+            "params": null,
+            "method": "get"
+          },
+          "userSync": null,
+          "userLookup": null,
+          "events": null,
+          "context": {
+            "api_key": "foobar",
+            "api_host": "my-company.freshdesk.com"
+          }
+        },
+        "@id": "0211af86e2724df49cb8ceda5f57c199"
+      },
+      "body": {
+        "type": "CUSTOM",
+        "provider": "freshdesk",
+        "name": "freshdesk",
+        "color": "#f014c7",
+        "label": "SYNC TEST (created on staging)",
+        "enabled": true,
+        "config": {
+          "baseUrl": null,
+          "defaults": {
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "contentType": "application/json",
+            "params": null,
+            "method": "get"
+          },
+          "auth": {
+            "type": "basic",
+            "oauth2": null,
+            "basic": {
+              "password": "X",
+              "username": ":context.api_key"
+            },
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "contentType": "application/json",
+            "params": null,
+            "method": "get"
+          },
+          "userSync": null,
+          "userLookup": null,
+          "events": null,
+          "context": {
+            "api_key": "foobar",
+            "api_host": "my-company.freshdesk.com"
+          }
+        },
+        "@id": "0211af86e2724df49cb8ceda5f57c199"
+      }
+    },
+    {
+      "type": "update",
+      "order": 1,
+      "resource": "triggers",
+      "sourceItem": {
+        "name": "Agents enabled",
+        "type": "ALL",
+        "conditions": [
+          {
+            "expression": "queue.60acaced99234ae5b9d214a6f8e03ac5.agents.enabled",
+            "operator": "GT",
+            "expectation": "0"
+          }
+        ],
+        "@id": "9aa09f3fb420475b9c3840e1f788b23d"
+      },
+      "targetItem": {
+        "name": "Agents enabled",
+        "type": "ALL",
+        "conditions": [
+          {
+            "expression": "queue.13d91f418403415580e96ace60ebe2eb.agents.enabled",
+            "operator": "GT",
+            "expectation": "0"
+          }
+        ],
+        "@id": "da4d6d35e3c54255be15e18b2a043eb8"
+      },
+      "body": {
+        "name": "Agents enabled",
+        "type": "ALL",
+        "conditions": [
+          {
+            "operator": "GT",
+            "expectation": "0",
+            "@mappingNeeded": true,
+            "@mappingFailed": true
+          }
+        ],
+        "@id": "da4d6d35e3c54255be15e18b2a043eb8"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-OB: Push ticket to agent",
+        "priority": 3748,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "21261f51a51342d7bf76e5c072596df4",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "4dce0c344a3a49c981c3dda5fff2f37e",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "3df67ce97352491a9ce07ede84e9c578"
+      },
+      "targetItem": {
+        "label": "ZD-OB: Push ticket to agent",
+        "priority": 3748,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "fb98fc1ff5fe4deeb5d905d6d607b234",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "ee57608c59814bf4b026ab7bb1d7179a",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "fa52caef5a5e463090d90689d92cccfa"
+      },
+      "body": {
+        "label": "ZD-OB: Push ticket to agent",
+        "priority": 3748,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/21261f51a51342d7bf76e5c072596df4",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "ref/triggers/4dce0c344a3a49c981c3dda5fff2f37e",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "fa52caef5a5e463090d90689d92cccfa"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-OB: Make end-user requester",
+        "priority": 3749,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": true
+        },
+        "trigger": {
+          "id": "4dce0c344a3a49c981c3dda5fff2f37e",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "9588ec50ee4b4716a66279e814af58a0"
+      },
+      "targetItem": {
+        "label": "ZD-OB: Make end-user requester",
+        "priority": 3749,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "fb98fc1ff5fe4deeb5d905d6d607b234",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": true
+        },
+        "trigger": {
+          "id": "ee57608c59814bf4b026ab7bb1d7179a",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "65d6bb3b790345daa7aba1a4057c1cd3"
+      },
+      "body": {
+        "label": "ZD-OB: Make end-user requester",
+        "priority": 3749,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": true
+        },
+        "trigger": {
+          "id": "ref/triggers/4dce0c344a3a49c981c3dda5fff2f37e",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "65d6bb3b790345daa7aba1a4057c1cd3"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-OB: Create ticket on bridged",
+        "priority": 3750,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": "Outbound call to {call.to.number}",
+          "comment": "You connected to the consumer {call.to.number} successfully",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "outbound"
+          ],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "4dce0c344a3a49c981c3dda5fff2f37e",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "8b632341af134d2a8fbb2ae53788570c"
+      },
+      "targetItem": {
+        "label": "ZD-OB: Create ticket on bridged",
+        "priority": 3750,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "fb98fc1ff5fe4deeb5d905d6d607b234",
+          "externalId": null,
+          "subject": "Outbound call to {call.to.number}",
+          "comment": "You connected to the consumer {call.to.number} successfully",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "outbound"
+          ],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "ee57608c59814bf4b026ab7bb1d7179a",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "f098e155b19d40a29951429f122508f7"
+      },
+      "body": {
+        "label": "ZD-OB: Create ticket on bridged",
+        "priority": 3750,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": "Outbound call to {call.to.number}",
+          "comment": "You connected to the consumer {call.to.number} successfully",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "outbound"
+          ],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "ref/triggers/4dce0c344a3a49c981c3dda5fff2f37e",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "f098e155b19d40a29951429f122508f7"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-IB: Push ticket to agent",
+        "priority": 3500,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "21261f51a51342d7bf76e5c072596df4",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "638e118c3b3e4afa9ccd7974596ccf5b",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "finish",
+          "code": "call.finish",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "5c55c8699f234ffb9a85941a6085672d"
+      },
+      "targetItem": {
+        "label": "ZD-IB: Push ticket to agent",
+        "priority": 3500,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "fb98fc1ff5fe4deeb5d905d6d607b234",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "000b7b331388488caa5336e7783c1bce",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "finish",
+          "code": "call.finish",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "930b1e41b4584160a396c9f0061fbb43"
+      },
+      "body": {
+        "label": "ZD-IB: Push ticket to agent",
+        "priority": 3500,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/21261f51a51342d7bf76e5c072596df4",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "ref/triggers/638e118c3b3e4afa9ccd7974596ccf5b",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "finish",
+          "code": "call.finish",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "930b1e41b4584160a396c9f0061fbb43"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-IB: Make end-user requester",
+        "priority": 3700,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "638e118c3b3e4afa9ccd7974596ccf5b",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "87ab844640da4c7ab6eb519754aa41d2"
+      },
+      "targetItem": {
+        "label": "ZD-IB: Make end-user requester",
+        "priority": 3700,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "fb98fc1ff5fe4deeb5d905d6d607b234",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "000b7b331388488caa5336e7783c1bce",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "6fb64575804b4318aa619ba536fe4ded"
+      },
+      "body": {
+        "label": "ZD-IB: Make end-user requester",
+        "priority": 3700,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "ref/triggers/638e118c3b3e4afa9ccd7974596ccf5b",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "6fb64575804b4318aa619ba536fe4ded"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-IB: Create ticket for each new inbound call",
+        "priority": 3701,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": "Incoming call from {zendesk.enduser.name}",
+          "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "call_inbound"
+          ],
+          "removeTags": [],
+          "tagMode": "simple",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "8b739e62fbf740d693e5c959ce364c09",
+          "name": "Call is inbound",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "d475e050099b44428a5c9c9f6ade848d"
+      },
+      "targetItem": {
+        "label": "ZD-IB: Create ticket for each new inbound call",
+        "priority": 3701,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "fb98fc1ff5fe4deeb5d905d6d607b234",
+          "externalId": null,
+          "subject": "Incoming call from {zendesk.enduser.name}",
+          "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "call_inbound"
+          ],
+          "removeTags": [],
+          "tagMode": "simple",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "5337e056ad40430cb5ffcc42a5a3e440",
+          "name": "Call is inbound",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "cd79d44182374955b428ddd868d341b5"
+      },
+      "body": {
+        "label": "ZD-IB: Create ticket for each new inbound call",
+        "priority": 3701,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/21261f51a51342d7bf76e5c072596df4",
+          "externalId": null,
+          "subject": "Incoming call from {zendesk.enduser.name}",
+          "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "call_inbound"
+          ],
+          "removeTags": [],
+          "tagMode": "simple",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "ref/triggers/8b739e62fbf740d693e5c959ce364c09",
+          "name": "Call is inbound",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "cd79d44182374955b428ddd868d341b5"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-All: Lookup end-user in ZD",
+        "priority": 3900,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "21261f51a51342d7bf76e5c072596df4",
+          "expression": "consumer.number"
+        },
+        "trigger": {
+          "id": "638e118c3b3e4afa9ccd7974596ccf5b",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "lookup",
+          "code": "zendesk.lookup",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "2f3177eb2d0a4a7ca79e8d444509043d"
+      },
+      "targetItem": {
+        "label": "ZD-All: Lookup end-user in ZD",
+        "priority": 3900,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "fb98fc1ff5fe4deeb5d905d6d607b234",
+          "expression": "consumer.number"
+        },
+        "trigger": {
+          "id": "000b7b331388488caa5336e7783c1bce",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "lookup",
+          "code": "zendesk.lookup",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "92f2da2a801146bea28beaf382e3dc54"
+      },
+      "body": {
+        "label": "ZD-All: Lookup end-user in ZD",
+        "priority": 3900,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/21261f51a51342d7bf76e5c072596df4",
+          "expression": "consumer.number"
+        },
+        "trigger": {
+          "id": "ref/triggers/638e118c3b3e4afa9ccd7974596ccf5b",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "lookup",
+          "code": "zendesk.lookup",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "92f2da2a801146bea28beaf382e3dc54"
+      }
+    },
+    {
+      "type": "addition",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "SYNC TEST (created on staging)",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": []
+        },
+        "@id": "a381b4230ef34b99a36dfb29fe56a81b"
+      },
+      "body": {
+        "name": "SYNC TEST (created on staging)",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": []
+        },
+        "@id": "a381b4230ef34b99a36dfb29fe56a81b"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "35630db1cb794af4b29f7c0a6a8e45ed"
+          },
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": [
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "81f4815d8f1348a9b51cff4a3bd3dbe4"
+              },
+              "application": {
+                "id": "a9a39bd43f674ce781611667cacd45d2"
+              },
+              "priority": 400
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "aa3824cee39c4ac59ad92f4b4fa88400"
+              },
+              "application": {
+                "id": "a9a39bd43f674ce781611667cacd45d2"
+              },
+              "priority": 300
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "9aa09f3fb420475b9c3840e1f788b23d"
+              },
+              "application": {
+                "id": "a4bb3a66a79948c080ad47df05465987"
+              },
+              "priority": 200
+            }
+          ]
+        },
+        "@id": "4f0f01f3ca19416a8ede4627211f5073"
+      },
+      "targetItem": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "115ed510092f4c3bad1c5b111f25814b"
+          },
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": [
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "9c3a84f7e2c1447db2477c811b433b6b"
+              },
+              "application": {
+                "id": "90e1a15421ed435591939891e5e35984"
+              },
+              "priority": 400
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "2bdff267b9134f8f8717fb616524fa24"
+              },
+              "application": {
+                "id": "90e1a15421ed435591939891e5e35984"
+              },
+              "priority": 300
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "da4d6d35e3c54255be15e18b2a043eb8"
+              },
+              "application": {
+                "id": "909b3859eae34fe19e74b9205d72480a"
+              },
+              "priority": 200
+            }
+          ]
+        },
+        "@id": "e6bb855a4d2b4b99a43ef04549d1e4c4"
+      },
+      "body": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": []
+        },
+        "@id": "e6bb855a4d2b4b99a43ef04549d1e4c4"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "7ca08ffee6db482bb19cbe842c8a7e81"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "51b8c47938b04c909e2b520593f51930",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "a4bb3a66a79948c080ad47df05465987"
+      },
+      "targetItem": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "938f5e8716e0493dbc4f8e709d5f9ca6"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "191527f7ef8146158b2c97cbd355d00c",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "909b3859eae34fe19e74b9205d72480a"
+      },
+      "body": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "ref/prompts/51b8c47938b04c909e2b520593f51930",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ]
+        },
+        "@id": "909b3859eae34fe19e74b9205d72480a"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "a9a39bd43f674ce781611667cacd45d2"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "de34c79c7168475d85c0d2d18d49dc23",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "35630db1cb794af4b29f7c0a6a8e45ed"
+      },
+      "targetItem": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "90e1a15421ed435591939891e5e35984"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "cf2edf9606a7441086cd919a6b6fa71e",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "115ed510092f4c3bad1c5b111f25814b"
+      },
+      "body": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "ref/prompts/de34c79c7168475d85c0d2d18d49dc23",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ]
+        },
+        "@id": "115ed510092f4c3bad1c5b111f25814b"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "2.0 - Call flow for Call Queue",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "consumerQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "a9a39bd43f674ce781611667cacd45d2"
+          },
+          "prompts": [
+            {
+              "key": "welcome",
+              "id": "813fb9dfd810445fa207bc3786a7dd8a",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "busy",
+              "id": "d1b57f4ac0924f4ca72b6c3989620818",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "queue": {
+            "id": "60acaced99234ae5b9d214a6f8e03ac5"
+          },
+          "queueExperience": {
+            "id": "59791433ae214e8c9cb8a86f10ac3a19"
+          },
+          "agentExperience": {
+            "id": "a8e4f63ad1f6455b9943552e4539e403"
+          },
+          "trigger": {
+            "invert": false,
+            "enabled": true,
+            "id": "638e118c3b3e4afa9ccd7974596ccf5b"
+          },
+          "exitTrigger": null,
+          "recordTrigger": null,
+          "ringTime": 0,
+          "record": false
+        },
+        "@id": "7ca08ffee6db482bb19cbe842c8a7e81"
+      },
+      "targetItem": {
+        "name": "2.0 - Call flow for Call Queue",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "consumerQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "90e1a15421ed435591939891e5e35984"
+          },
+          "prompts": [
+            {
+              "key": "welcome",
+              "id": "fe13e1b2568445ffa0d2bf6f8df1e8c5",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "busy",
+              "id": "9fc45db876064735896298b0d64a1b94",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "queue": {
+            "id": "13d91f418403415580e96ace60ebe2eb"
+          },
+          "queueExperience": {
+            "id": "fc8a352e0b5c4f59855f953f3c3b466f"
+          },
+          "agentExperience": {
+            "id": "aa9e2bc13b714be49558730c7a8db2e2"
+          },
+          "trigger": {
+            "invert": false,
+            "enabled": true,
+            "id": "000b7b331388488caa5336e7783c1bce"
+          },
+          "exitTrigger": null,
+          "recordTrigger": null,
+          "ringTime": 0,
+          "record": false
+        },
+        "@id": "938f5e8716e0493dbc4f8e709d5f9ca6"
+      },
+      "body": {
+        "name": "2.0 - Call flow for Call Queue",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "consumerQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "welcome",
+              "id": "ref/prompts/813fb9dfd810445fa207bc3786a7dd8a",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "busy",
+              "id": "ref/prompts/d1b57f4ac0924f4ca72b6c3989620818",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ],
+          "queue": {
+            "id": "ref/queues/60acaced99234ae5b9d214a6f8e03ac5",
+            "@mapped": false
+          },
+          "queueExperience": {
+            "id": "ref/applications/59791433ae214e8c9cb8a86f10ac3a19",
+            "@mapped": false
+          },
+          "agentExperience": {
+            "id": "ref/applications/a8e4f63ad1f6455b9943552e4539e403",
+            "@mapped": false
+          },
+          "trigger": {
+            "invert": false,
+            "enabled": true,
+            "id": "ref/triggers/638e118c3b3e4afa9ccd7974596ccf5b",
+            "@mapped": false
+          },
+          "exitTrigger": null,
+          "recordTrigger": null,
+          "ringTime": 0,
+          "record": false
+        },
+        "@id": "938f5e8716e0493dbc4f8e709d5f9ca6"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "2.1 - Chime for agents",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "agentQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "a8e4f63ad1f6455b9943552e4539e403"
+          },
+          "prompts": [
+            {
+              "key": "signal",
+              "id": "608b2e96a13c459ba89693d2a2c9cc1e",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "ring": false,
+          "bridgeDelay": 1
+        },
+        "@id": "a8e4f63ad1f6455b9943552e4539e403"
+      },
+      "targetItem": {
+        "name": "2.1 - Chime for agents",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "agentQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "aa9e2bc13b714be49558730c7a8db2e2"
+          },
+          "prompts": [
+            {
+              "key": "signal",
+              "id": "84722f6fab0748ba8e99d73158541170",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "ring": false,
+          "bridgeDelay": 1
+        },
+        "@id": "aa9e2bc13b714be49558730c7a8db2e2"
+      },
+      "body": {
+        "name": "2.1 - Chime for agents",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "agentQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "signal",
+              "id": "ref/prompts/608b2e96a13c459ba89693d2a2c9cc1e",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ],
+          "ring": false,
+          "bridgeDelay": 1
+        },
+        "@id": "aa9e2bc13b714be49558730c7a8db2e2"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "2.2 - Looped waiting audio",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "59791433ae214e8c9cb8a86f10ac3a19"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-1",
+              "id": "84545c9bfba94638a8993998950867bc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-2",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-3",
+              "id": "18e8759119a647ba85bcb28036fb6497",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-4",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-5",
+              "id": "71a429de44214cf1bfd09d8f013de480",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-6",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "59791433ae214e8c9cb8a86f10ac3a19"
+      },
+      "targetItem": {
+        "name": "2.2 - Looped waiting audio",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "fc8a352e0b5c4f59855f953f3c3b466f"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-1",
+              "id": "30e96ed126554f35b17b9a18a21e97d0",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-2",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-3",
+              "id": "88d12fb4167f4289bae94ceff0f0545a",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-4",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-5",
+              "id": "fd137a1bf7454fe689694f5492e691d5",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-6",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "fc8a352e0b5c4f59855f953f3c3b466f"
+      },
+      "body": {
+        "name": "2.2 - Looped waiting audio",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-1",
+              "id": "ref/prompts/84545c9bfba94638a8993998950867bc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-2",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-3",
+              "id": "ref/prompts/18e8759119a647ba85bcb28036fb6497",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-4",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-5",
+              "id": "ref/prompts/71a429de44214cf1bfd09d8f013de480",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-6",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ]
+        },
+        "@id": "fc8a352e0b5c4f59855f953f3c3b466f"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "3.0 - Sorry no one available - try later - goodbye",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "end"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "1f3c089a331146848b4fc9be962bd9da",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-1",
+              "id": "1a6e5e960a4a430eae6c8db7ccae1b74",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "a9a39bd43f674ce781611667cacd45d2"
+      },
+      "targetItem": {
+        "name": "3.0 - Sorry no one available - try later - goodbye",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "end"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "09fec98ba1d04c0dba7539020dd058f4",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-1",
+              "id": "a6a1d79ee2c84e6093408ab546795926",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "90e1a15421ed435591939891e5e35984"
+      },
+      "body": {
+        "name": "3.0 - Sorry no one available - try later - goodbye",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "end"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "ref/prompts/1f3c089a331146848b4fc9be962bd9da",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-1",
+              "id": "ref/prompts/1a6e5e960a4a430eae6c8db7ccae1b74",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ]
+        },
+        "@id": "90e1a15421ed435591939891e5e35984"
+      }
+    },
+    {
+      "type": "update",
+      "order": 50000,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "35630db1cb794af4b29f7c0a6a8e45ed"
+          },
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": [
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "81f4815d8f1348a9b51cff4a3bd3dbe4"
+              },
+              "application": {
+                "id": "a9a39bd43f674ce781611667cacd45d2"
+              },
+              "priority": 400
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "aa3824cee39c4ac59ad92f4b4fa88400"
+              },
+              "application": {
+                "id": "a9a39bd43f674ce781611667cacd45d2"
+              },
+              "priority": 300
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "9aa09f3fb420475b9c3840e1f788b23d"
+              },
+              "application": {
+                "id": "a4bb3a66a79948c080ad47df05465987"
+              },
+              "priority": 200
+            }
+          ]
+        },
+        "@id": "4f0f01f3ca19416a8ede4627211f5073"
+      },
+      "targetItem": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "115ed510092f4c3bad1c5b111f25814b"
+          },
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": [
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "9c3a84f7e2c1447db2477c811b433b6b"
+              },
+              "application": {
+                "id": "90e1a15421ed435591939891e5e35984"
+              },
+              "priority": 400
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "2bdff267b9134f8f8717fb616524fa24"
+              },
+              "application": {
+                "id": "90e1a15421ed435591939891e5e35984"
+              },
+              "priority": 300
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "da4d6d35e3c54255be15e18b2a043eb8"
+              },
+              "application": {
+                "id": "909b3859eae34fe19e74b9205d72480a"
+              },
+              "priority": 200
+            }
+          ]
+        },
+        "@id": "e6bb855a4d2b4b99a43ef04549d1e4c4"
+      },
+      "body": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "ref/applications/35630db1cb794af4b29f7c0a6a8e45ed",
+            "@mapped": false
+          },
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": [
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "ref/triggers/81f4815d8f1348a9b51cff4a3bd3dbe4",
+                "@mapped": false
+              },
+              "application": {
+                "id": "ref/applications/a9a39bd43f674ce781611667cacd45d2",
+                "@mapped": false
+              },
+              "priority": 400
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "ref/triggers/aa3824cee39c4ac59ad92f4b4fa88400",
+                "@mapped": false
+              },
+              "application": {
+                "id": "ref/applications/a9a39bd43f674ce781611667cacd45d2",
+                "@mapped": false
+              },
+              "priority": 300
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "ref/triggers/9aa09f3fb420475b9c3840e1f788b23d",
+                "@mapped": false
+              },
+              "application": {
+                "id": "ref/applications/a4bb3a66a79948c080ad47df05465987",
+                "@mapped": false
+              },
+              "priority": 200
+            }
+          ]
+        },
+        "@id": "ref/applications/e6bb855a4d2b4b99a43ef04549d1e4c4"
+      }
+    },
+    {
+      "type": "update",
+      "order": 50000,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "7ca08ffee6db482bb19cbe842c8a7e81"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "51b8c47938b04c909e2b520593f51930",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "a4bb3a66a79948c080ad47df05465987"
+      },
+      "targetItem": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "938f5e8716e0493dbc4f8e709d5f9ca6"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "191527f7ef8146158b2c97cbd355d00c",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "909b3859eae34fe19e74b9205d72480a"
+      },
+      "body": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "ref/applications/7ca08ffee6db482bb19cbe842c8a7e81",
+            "@mapped": false
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "ref/prompts/51b8c47938b04c909e2b520593f51930",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ]
+        },
+        "@id": "ref/applications/909b3859eae34fe19e74b9205d72480a"
+      }
+    },
+    {
+      "type": "update",
+      "order": 50000,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "a9a39bd43f674ce781611667cacd45d2"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "de34c79c7168475d85c0d2d18d49dc23",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "35630db1cb794af4b29f7c0a6a8e45ed"
+      },
+      "targetItem": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "90e1a15421ed435591939891e5e35984"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "cf2edf9606a7441086cd919a6b6fa71e",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "115ed510092f4c3bad1c5b111f25814b"
+      },
+      "body": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "ref/applications/a9a39bd43f674ce781611667cacd45d2",
+            "@mapped": false
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "ref/prompts/de34c79c7168475d85c0d2d18d49dc23",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ]
+        },
+        "@id": "ref/applications/115ed510092f4c3bad1c5b111f25814b"
+      }
+    },
+    {
+      "type": "update",
+      "order": 50000,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "2.0 - Call flow for Call Queue",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "consumerQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "a9a39bd43f674ce781611667cacd45d2"
+          },
+          "prompts": [
+            {
+              "key": "welcome",
+              "id": "813fb9dfd810445fa207bc3786a7dd8a",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "busy",
+              "id": "d1b57f4ac0924f4ca72b6c3989620818",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "queue": {
+            "id": "60acaced99234ae5b9d214a6f8e03ac5"
+          },
+          "queueExperience": {
+            "id": "59791433ae214e8c9cb8a86f10ac3a19"
+          },
+          "agentExperience": {
+            "id": "a8e4f63ad1f6455b9943552e4539e403"
+          },
+          "trigger": {
+            "invert": false,
+            "enabled": true,
+            "id": "638e118c3b3e4afa9ccd7974596ccf5b"
+          },
+          "exitTrigger": null,
+          "recordTrigger": null,
+          "ringTime": 0,
+          "record": false
+        },
+        "@id": "7ca08ffee6db482bb19cbe842c8a7e81"
+      },
+      "targetItem": {
+        "name": "2.0 - Call flow for Call Queue",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "consumerQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "90e1a15421ed435591939891e5e35984"
+          },
+          "prompts": [
+            {
+              "key": "welcome",
+              "id": "fe13e1b2568445ffa0d2bf6f8df1e8c5",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "busy",
+              "id": "9fc45db876064735896298b0d64a1b94",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "queue": {
+            "id": "13d91f418403415580e96ace60ebe2eb"
+          },
+          "queueExperience": {
+            "id": "fc8a352e0b5c4f59855f953f3c3b466f"
+          },
+          "agentExperience": {
+            "id": "aa9e2bc13b714be49558730c7a8db2e2"
+          },
+          "trigger": {
+            "invert": false,
+            "enabled": true,
+            "id": "000b7b331388488caa5336e7783c1bce"
+          },
+          "exitTrigger": null,
+          "recordTrigger": null,
+          "ringTime": 0,
+          "record": false
+        },
+        "@id": "938f5e8716e0493dbc4f8e709d5f9ca6"
+      },
+      "body": {
+        "name": "2.0 - Call flow for Call Queue",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "consumerQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "ref/applications/a9a39bd43f674ce781611667cacd45d2",
+            "@mapped": false
+          },
+          "prompts": [
+            {
+              "key": "welcome",
+              "id": "ref/prompts/813fb9dfd810445fa207bc3786a7dd8a",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "busy",
+              "id": "ref/prompts/d1b57f4ac0924f4ca72b6c3989620818",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ],
+          "queue": {
+            "id": "ref/queues/60acaced99234ae5b9d214a6f8e03ac5",
+            "@mapped": false
+          },
+          "queueExperience": {
+            "id": "ref/applications/59791433ae214e8c9cb8a86f10ac3a19",
+            "@mapped": false
+          },
+          "agentExperience": {
+            "id": "ref/applications/a8e4f63ad1f6455b9943552e4539e403",
+            "@mapped": false
+          },
+          "trigger": {
+            "invert": false,
+            "enabled": true,
+            "id": "ref/triggers/638e118c3b3e4afa9ccd7974596ccf5b",
+            "@mapped": false
+          },
+          "exitTrigger": null,
+          "recordTrigger": null,
+          "ringTime": 0,
+          "record": false
+        },
+        "@id": "ref/applications/938f5e8716e0493dbc4f8e709d5f9ca6"
+      }
+    },
+    {
+      "type": "update",
+      "order": 50000,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "2.1 - Chime for agents",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "agentQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "a8e4f63ad1f6455b9943552e4539e403"
+          },
+          "prompts": [
+            {
+              "key": "signal",
+              "id": "608b2e96a13c459ba89693d2a2c9cc1e",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "ring": false,
+          "bridgeDelay": 1
+        },
+        "@id": "a8e4f63ad1f6455b9943552e4539e403"
+      },
+      "targetItem": {
+        "name": "2.1 - Chime for agents",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "agentQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "aa9e2bc13b714be49558730c7a8db2e2"
+          },
+          "prompts": [
+            {
+              "key": "signal",
+              "id": "84722f6fab0748ba8e99d73158541170",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ],
+          "ring": false,
+          "bridgeDelay": 1
+        },
+        "@id": "aa9e2bc13b714be49558730c7a8db2e2"
+      },
+      "body": {
+        "name": "2.1 - Chime for agents",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "agentQueue",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "ref/applications/a8e4f63ad1f6455b9943552e4539e403",
+            "@mapped": false
+          },
+          "prompts": [
+            {
+              "key": "signal",
+              "id": "ref/prompts/608b2e96a13c459ba89693d2a2c9cc1e",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ],
+          "ring": false,
+          "bridgeDelay": 1
+        },
+        "@id": "ref/applications/aa9e2bc13b714be49558730c7a8db2e2"
+      }
+    },
+    {
+      "type": "update",
+      "order": 50000,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "2.2 - Looped waiting audio",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "59791433ae214e8c9cb8a86f10ac3a19"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-1",
+              "id": "84545c9bfba94638a8993998950867bc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-2",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-3",
+              "id": "18e8759119a647ba85bcb28036fb6497",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-4",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-5",
+              "id": "71a429de44214cf1bfd09d8f013de480",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-6",
+              "id": "b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "59791433ae214e8c9cb8a86f10ac3a19"
+      },
+      "targetItem": {
+        "name": "2.2 - Looped waiting audio",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "fc8a352e0b5c4f59855f953f3c3b466f"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-1",
+              "id": "30e96ed126554f35b17b9a18a21e97d0",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-2",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-3",
+              "id": "88d12fb4167f4289bae94ceff0f0545a",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-4",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-5",
+              "id": "fd137a1bf7454fe689694f5492e691d5",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            },
+            {
+              "key": "prompt-6",
+              "id": "d6534f2ea8174c429cd5022baa159a39",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "fc8a352e0b5c4f59855f953f3c3b466f"
+      },
+      "body": {
+        "name": "2.2 - Looped waiting audio",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "waiting"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "ref/applications/59791433ae214e8c9cb8a86f10ac3a19",
+            "@mapped": false
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-1",
+              "id": "ref/prompts/84545c9bfba94638a8993998950867bc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-2",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-3",
+              "id": "ref/prompts/18e8759119a647ba85bcb28036fb6497",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-4",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-5",
+              "id": "ref/prompts/71a429de44214cf1bfd09d8f013de480",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            },
+            {
+              "key": "prompt-6",
+              "id": "ref/prompts/b7f8c1983a124d2d97851d80c1f5b7fc",
+              "enabled": false,
+              "startDelay": 0,
+              "endPause": 0,
+              "@mapped": false
+            }
+          ]
+        },
+        "@id": "ref/applications/fc8a352e0b5c4f59855f953f3c3b466f"
+      }
+    },
+    {
+      "type": "deletion",
+      "order": 3,
+      "resource": "applications/actions",
+      "targetItem": {
+        "@parentId": "fc8a352e0b5c4f59855f953f3c3b466f",
+        "label": "Leave queue after max wait time",
+        "position": "POST",
+        "priority": 1,
+        "enabled": true,
+        "action": {
+          "type": "QUEUE",
+          "name": "leave",
+          "code": "queue.leave",
+          "label": "",
+          "provider": "default",
+          "group": "queue"
+        },
+        "trigger": {
+          "id": "591018a57efe48548c482c8e859b3799",
+          "name": "Maximum queue wait time reached",
+          "type": "ALL",
+          "conditions": [
+            {
+              "expression": "queue.waitTime",
+              "operator": "GE",
+              "expectation": "300"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        },
+        "invertTrigger": false,
+        "@id": "e10b5610ca724abdbd122fcd5b534ef1"
+      }
+    },
+    {
+      "type": "addition",
+      "order": 3,
+      "resource": "applications/actions",
+      "sourceItem": {
+        "@parentId": "59791433ae214e8c9cb8a86f10ac3a19",
+        "label": "Leave queue after max wait time",
+        "position": "POST",
+        "priority": 1,
+        "enabled": true,
+        "action": {
+          "type": "QUEUE",
+          "name": "leave",
+          "code": "queue.leave",
+          "label": "",
+          "provider": "default",
+          "group": "queue"
+        },
+        "trigger": {
+          "id": "f553c81da6624af4b5b593563c969754",
+          "name": "Maximum queue wait time reached",
+          "type": "ALL",
+          "conditions": [
+            {
+              "expression": "queue.waitTime",
+              "operator": "GE",
+              "expectation": "300"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        },
+        "invertTrigger": false,
+        "@id": "c0d8b173fb3b476bb33ea2fccec68794"
+      },
+      "body": {
+        "@parentId": "ref/applications/59791433ae214e8c9cb8a86f10ac3a19",
+        "label": "Leave queue after max wait time",
+        "position": "POST",
+        "priority": 1,
+        "enabled": true,
+        "action": {
+          "type": "QUEUE",
+          "name": "leave",
+          "code": "queue.leave",
+          "label": "",
+          "provider": "default",
+          "group": "queue"
+        },
+        "trigger": {
+          "id": "ref/triggers/f553c81da6624af4b5b593563c969754",
+          "name": "Maximum queue wait time reached",
+          "type": "ALL",
+          "conditions": [
+            {
+              "expression": "queue.waitTime",
+              "operator": "GE",
+              "expectation": "300"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        },
+        "invertTrigger": false,
+        "@id": "c0d8b173fb3b476bb33ea2fccec68794"
+      }
+    }
+  ]
+}

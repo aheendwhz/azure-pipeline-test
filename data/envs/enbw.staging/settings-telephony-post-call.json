@@ -1,0 +1,13 @@
+{
+  "resource": "settings/telephony/post-call",
+  "url": "/api/v2/settings/telephony/post-call",
+  "items": [
+    {
+      "scope": "telephony",
+      "key": "post-call",
+      "data": {
+        "applicationId": null
+      }
+    }
+  ]
+}

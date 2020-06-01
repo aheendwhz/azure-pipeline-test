@@ -1,0 +1,18 @@
+{
+  "resource": "presence",
+  "url": "/api/v2/agents/presence/available",
+  "items": [
+    {
+      "name": "available",
+      "label": "Available",
+      "available": true,
+      "is_default": true
+    },
+    {
+      "name": "busy",
+      "label": "Busy",
+      "available": false,
+      "is_default": true
+    }
+  ]
+}

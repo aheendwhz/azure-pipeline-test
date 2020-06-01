@@ -1,0 +1,280 @@
+{
+  "resource": "applications",
+  "url": "/api/v2/applications",
+  "items": [
+    {
+      "name": "1.0 - Calendars, business hours, enabled",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "switchNode",
+      "tags": [
+        "routing",
+        "welcome"
+      ],
+      "settings": {
+        "flowEndApplication": {
+          "id": "8cf25b476bab495d8a3374ea2c863390"
+        },
+        "prompts": [],
+        "enableSwitching": true,
+        "triggers": [
+          {
+            "trigger": {
+              "invert": false,
+              "enabled": true,
+              "id": "0d4fe6be9f07475c89bea9bb5884488c"
+            },
+            "application": {
+              "id": "f40f44fa0d8b427189248ec4ca3f6d51"
+            },
+            "priority": 400
+          },
+          {
+            "trigger": {
+              "invert": false,
+              "enabled": true,
+              "id": "39e67227e74d44dfa0224829f8cc14b1"
+            },
+            "application": {
+              "id": "f40f44fa0d8b427189248ec4ca3f6d51"
+            },
+            "priority": 300
+          }
+        ]
+      },
+      "@id": "fc2e37b9f20f442c8d098e1648aae015"
+    },
+    {
+      "name": "1.1 - Welcome - agents enabled",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "promptPlayer",
+      "tags": [
+        "welcome"
+      ],
+      "settings": {
+        "flowEndApplication": {
+          "id": "03b6bddcc9a54670973c799e29335cb1"
+        },
+        "prompts": [
+          {
+            "key": "prompt-0",
+            "id": "367fde5dce66490781c20c87ddc0afc7",
+            "enabled": true,
+            "startDelay": 0,
+            "endPause": 0
+          }
+        ]
+      },
+      "@id": "97f1ebf41fad44cd825af762c07fe768"
+    },
+    {
+      "name": "1.2 - Welcome only - no agents enabled",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "promptPlayer",
+      "tags": [
+        "welcome"
+      ],
+      "settings": {
+        "flowEndApplication": {
+          "id": "f40f44fa0d8b427189248ec4ca3f6d51"
+        },
+        "prompts": [
+          {
+            "key": "prompt-0",
+            "id": "2edafe81c458457db1e2e5f1dfb6d422",
+            "enabled": true,
+            "startDelay": 0,
+            "endPause": 0
+          }
+        ]
+      },
+      "@id": "8cf25b476bab495d8a3374ea2c863390"
+    },
+    {
+      "name": "2.0 - Call flow for Call Queue",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "consumerQueue",
+      "tags": [
+        "waiting"
+      ],
+      "settings": {
+        "flowEndApplication": {
+          "id": "f40f44fa0d8b427189248ec4ca3f6d51"
+        },
+        "prompts": [
+          {
+            "key": "welcome",
+            "id": "f7086736a3534ef69f101af8326a3ec5",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "busy",
+            "id": "8c976a3f79164b1e953482d6256db562",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          }
+        ],
+        "queue": {
+          "id": "819d574c485c49918dadb1adc11b219f"
+        },
+        "queueExperience": {
+          "id": "fb80ad8502c24fb799bafd2dba664784"
+        },
+        "agentExperience": {
+          "id": "d4e31de4a8d141b4985524385ef9c3c8"
+        },
+        "trigger": {
+          "invert": false,
+          "enabled": true,
+          "id": "494d284cf7c9425b8510ccd4189dc16c"
+        },
+        "exitTrigger": null,
+        "recordTrigger": null,
+        "ringTime": 0,
+        "record": false
+      },
+      "@id": "03b6bddcc9a54670973c799e29335cb1"
+    },
+    {
+      "name": "2.1 - Chime for agents",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "agentQueue",
+      "tags": [
+        "waiting"
+      ],
+      "settings": {
+        "flowEndApplication": {
+          "id": "d4e31de4a8d141b4985524385ef9c3c8"
+        },
+        "prompts": [
+          {
+            "key": "signal",
+            "id": "997d155735914003bc8195041a00fdff",
+            "enabled": true,
+            "startDelay": 0,
+            "endPause": 0
+          }
+        ],
+        "ring": false,
+        "bridgeDelay": 1
+      },
+      "@id": "d4e31de4a8d141b4985524385ef9c3c8"
+    },
+    {
+      "name": "2.2 - Looped waiting audio",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "promptPlayer",
+      "tags": [
+        "waiting"
+      ],
+      "settings": {
+        "flowEndApplication": {
+          "id": "fb80ad8502c24fb799bafd2dba664784"
+        },
+        "prompts": [
+          {
+            "key": "prompt-0",
+            "id": "d13c93b784964b6eb6732a7a6716a885",
+            "enabled": true,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "prompt-1",
+            "id": "ceb165df4beb440794bd5e039980ac6f",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "prompt-2",
+            "id": "d13c93b784964b6eb6732a7a6716a885",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "prompt-3",
+            "id": "35ea5db2a3e64f52abb8b4527f9a5164",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "prompt-4",
+            "id": "d13c93b784964b6eb6732a7a6716a885",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "prompt-5",
+            "id": "5afd4c4cd7d9487f8f316511bebd4ecc",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "prompt-6",
+            "id": "d13c93b784964b6eb6732a7a6716a885",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          }
+        ]
+      },
+      "@id": "fb80ad8502c24fb799bafd2dba664784"
+    },
+    {
+      "name": "3.0 - Sorry no one available - try later - goodbye",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "promptPlayer",
+      "tags": [
+        "end"
+      ],
+      "settings": {
+        "flowEndApplication": null,
+        "prompts": [
+          {
+            "key": "prompt-0",
+            "id": "c56f99fd57694adaa5ce763648700b2c",
+            "enabled": true,
+            "startDelay": 0,
+            "endPause": 0
+          },
+          {
+            "key": "prompt-1",
+            "id": "fdeeb1364c5f444d9dfeb50080c89c2f",
+            "enabled": false,
+            "startDelay": 0,
+            "endPause": 0
+          }
+        ]
+      },
+      "@id": "f40f44fa0d8b427189248ec4ca3f6d51"
+    },
+    {
+      "name": "CREATED ON DEV",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "switchNode",
+      "tags": [],
+      "settings": {
+        "flowEndApplication": null,
+        "prompts": [],
+        "enableSwitching": true,
+        "triggers": []
+      },
+      "@id": "d84203aa95ee4b8880dc5c3ec4519b9a"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "resource": "settings/telephony/agent.outbound",
+  "url": "/api/v2/settings/telephony/agent.outbound",
+  "items": [
+    {
+      "scope": "telephony",
+      "key": "agent.outbound",
+      "data": {
+        "wrapUpBusy": 180,
+        "wrapUpUnreachable": 10,
+        "wrapUpDeclined": 180
+      }
+    }
+  ]
+}

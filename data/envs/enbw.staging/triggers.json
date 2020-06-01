@@ -1,0 +1,100 @@
+{
+  "resource": "triggers",
+  "url": "/api/v2/triggers",
+  "items": [
+    {
+      "name": "Outside Business Hours",
+      "type": "ALL",
+      "conditions": [
+        {
+          "expression": "hours.1bfa24dc5a294434966f2bd97d07e1e4.in.hours",
+          "operator": "NOT_GIVEN",
+          "expectation": null
+        }
+      ],
+      "@id": "18846717e5af45249bd14b09a207edbb"
+    },
+    {
+      "name": "Maximum queue wait time reached",
+      "type": "ALL",
+      "conditions": [
+        {
+          "expression": "queue.waitTime",
+          "operator": "GE",
+          "expectation": "300"
+        }
+      ],
+      "@id": "ad20bdf1b3b04e7998a79095c52a3186"
+    },
+    {
+      "name": "Holiday calendar",
+      "type": "ALL",
+      "conditions": [
+        {
+          "expression": "calendar.a2454c95d3d04fba95f9ef72ae4e997c.is.HOLIDAY",
+          "operator": "GIVEN",
+          "expectation": null
+        }
+      ],
+      "@id": "358f355731ec4fdc98aebcaa81b8b60e"
+    },
+    {
+      "name": "Call is outbound (no Browser Phone)",
+      "type": "ALL",
+      "conditions": [
+        {
+          "expression": "call.type.outbound",
+          "operator": "GIVEN",
+          "expectation": null
+        },
+        {
+          "expression": "call.source",
+          "operator": "NEQ",
+          "expectation": "queue"
+        },
+        {
+          "expression": "call.domain",
+          "operator": "EQ",
+          "expectation": "external"
+        }
+      ],
+      "@id": "84891639785b49fab5fac916af4e8692"
+    },
+    {
+      "name": "Call is inbound",
+      "type": "ALL",
+      "conditions": [
+        {
+          "expression": "call.type.inbound",
+          "operator": "GIVEN",
+          "expectation": null
+        }
+      ],
+      "@id": "a918d58d76024f3a92847929d3201dd1"
+    },
+    {
+      "name": "Append to ticket",
+      "type": "ALL",
+      "conditions": [
+        {
+          "expression": "zendesk.ticket.mode",
+          "operator": "EQ",
+          "expectation": "append"
+        }
+      ],
+      "@id": "ed1429713c9b49c380738bd1f3007a66"
+    },
+    {
+      "name": "Always",
+      "type": "ALL",
+      "conditions": [
+        {
+          "expression": "core.always",
+          "operator": "GIVEN",
+          "expectation": null
+        }
+      ],
+      "@id": "d78722f793144889bf319db8eb84f7df"
+    }
+  ]
+}

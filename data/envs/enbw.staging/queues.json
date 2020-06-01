@@ -1,0 +1,28 @@
+{
+  "resource": "queues",
+  "url": "/api/v2/queues",
+  "items": [
+    {
+      "enabled": true,
+      "defaultRingTimeout": 10,
+      "wrapUpTime": 10,
+      "name": "CREATED ON DEV",
+      "maxDialCount": 1,
+      "dialOrder": "RANDOM",
+      "dialOrderTimePeriod": 3600,
+      "maxSize": 100,
+      "@id": "026ea13d7e2a45e79e60463e69f87546"
+    },
+    {
+      "enabled": true,
+      "defaultRingTimeout": 25,
+      "wrapUpTime": 10,
+      "name": "Call Queue",
+      "maxDialCount": 1,
+      "dialOrder": "RANDOM",
+      "dialOrderTimePeriod": 3600,
+      "maxSize": 100,
+      "@id": "1b70093d9a1f481197058bdacfcef5e7"
+    }
+  ]
+}

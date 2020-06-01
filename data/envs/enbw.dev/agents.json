@@ -1,0 +1,16 @@
+{
+  "resource": "agents",
+  "url": "/api/v2/agents",
+  "items": [
+    {
+      "sourceId": "3d0dd0f04742446ba98ec6ea9414501c",
+      "agentSource": "internal",
+      "name": "CREATED ON DEV",
+      "number": null,
+      "enabled": false,
+      "email": null,
+      "tags": [],
+      "@id": "d96ebc5724b842a78104fb689a8b5daf"
+    }
+  ]
+}

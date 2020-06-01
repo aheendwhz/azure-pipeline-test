@@ -1,0 +1,21 @@
+{
+  "resource": "integrations",
+  "url": "/api/v2/integrations",
+  "items": [
+    {
+      "type": "ZENDESK",
+      "provider": "zendesk",
+      "name": null,
+      "color": "#C8DE72",
+      "label": "My custom [zendesk] integration",
+      "enabled": false,
+      "config": {
+        "apiToken": "YOUR-API-TOKEN",
+        "subDomain": "yourcompany",
+        "username": "zendesk@yourcompany.com",
+        "password": null
+      },
+      "@id": "5b28350e7028493e86d34e90b6c654f3"
+    }
+  ]
+}

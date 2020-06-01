@@ -1,0 +1,13 @@
+{
+  "resource": "settings/app/customer.logging",
+  "url": "/api/v2/settings/app/customer.logging",
+  "items": [
+    {
+      "scope": "app",
+      "key": "customer.logging",
+      "data": {
+        "enabled": false
+      }
+    }
+  ]
+}

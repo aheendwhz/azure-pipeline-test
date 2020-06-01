@@ -1,0 +1,74 @@
+{
+  "resource": "business-hours",
+  "url": "/api/v2/business-hours",
+  "items": [
+    {
+      "name": "Office Hours - Europe/Berlin",
+      "timeZone": "Europe/Berlin",
+      "enabled": true,
+      "ranges": [
+        {
+          "start": {
+            "day": "monday",
+            "hour": 9,
+            "minute": 0
+          },
+          "end": {
+            "day": "monday",
+            "hour": 17,
+            "minute": 0
+          }
+        },
+        {
+          "start": {
+            "day": "tuesday",
+            "hour": 9,
+            "minute": 0
+          },
+          "end": {
+            "day": "tuesday",
+            "hour": 17,
+            "minute": 0
+          }
+        },
+        {
+          "start": {
+            "day": "wednesday",
+            "hour": 9,
+            "minute": 0
+          },
+          "end": {
+            "day": "wednesday",
+            "hour": 17,
+            "minute": 0
+          }
+        },
+        {
+          "start": {
+            "day": "thursday",
+            "hour": 9,
+            "minute": 0
+          },
+          "end": {
+            "day": "thursday",
+            "hour": 17,
+            "minute": 0
+          }
+        },
+        {
+          "start": {
+            "day": "friday",
+            "hour": 9,
+            "minute": 0
+          },
+          "end": {
+            "day": "friday",
+            "hour": 17,
+            "minute": 0
+          }
+        }
+      ],
+      "@id": "0b2fd0dbd67c464b9909558b3828a551"
+    }
+  ]
+}

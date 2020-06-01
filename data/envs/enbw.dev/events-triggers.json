@@ -1,0 +1,319 @@
+{
+  "resource": "events/triggers",
+  "url": "/api/v2/events/triggers",
+  "items": [
+    {
+      "label": "CREATED ON DEV",
+      "priority": 12,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "message": "foo bar"
+      },
+      "trigger": {
+        "id": "494d284cf7c9425b8510ccd4189dc16c",
+        "name": "Always",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "AGENT",
+        "name": "presence.change",
+        "code": "agent.presence.change",
+        "label": ""
+      },
+      "action": {
+        "type": "LOG",
+        "name": "message",
+        "code": "log.message",
+        "label": "",
+        "provider": "default",
+        "group": "log"
+      },
+      "@id": "8cc989441ca749efacd9e11720659d18"
+    },
+    {
+      "label": "ZD-OB: Push ticket to agent",
+      "priority": 3748,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "integrationId": "5b28350e7028493e86d34e90b6c654f3",
+        "agentId": -2
+      },
+      "trigger": {
+        "id": "83fb85aaadaa4ecca904c4c7962c381f",
+        "name": "Call is outbound (no Browser Phone)",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "CALL",
+        "name": "taken",
+        "code": "call.taken",
+        "label": ""
+      },
+      "action": {
+        "type": "ZENDESK",
+        "name": "openTicket",
+        "code": "zendesk.openTicket",
+        "label": "",
+        "provider": "default",
+        "group": "zendesk"
+      },
+      "@id": "db3f8f0b47f2458ea4cbe3b698f0906c"
+    },
+    {
+      "label": "ZD-OB: Make end-user requester",
+      "priority": 3749,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "integrationId": "5b28350e7028493e86d34e90b6c654f3",
+        "externalId": null,
+        "subject": null,
+        "comment": null,
+        "isPublic": false,
+        "requesterId": -3,
+        "assigneeId": -2,
+        "groupId": null,
+        "type": null,
+        "priority": null,
+        "status": null,
+        "voiceComment": false,
+        "tags": [],
+        "removeTags": [],
+        "tagMode": "advanced",
+        "ticketFields": [],
+        "openTicket": true
+      },
+      "trigger": {
+        "id": "83fb85aaadaa4ecca904c4c7962c381f",
+        "name": "Call is outbound (no Browser Phone)",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "CALL",
+        "name": "taken",
+        "code": "call.taken",
+        "label": ""
+      },
+      "action": {
+        "type": "ZENDESK",
+        "name": "updateTicket",
+        "code": "zendesk.updateTicket",
+        "label": "",
+        "provider": "default",
+        "group": "zendesk"
+      },
+      "@id": "f5bd28d116134a19b0a0d93683e19888"
+    },
+    {
+      "label": "ZD-OB: Create ticket on bridged",
+      "priority": 3750,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "integrationId": "5b28350e7028493e86d34e90b6c654f3",
+        "externalId": null,
+        "subject": "Outbound call to {call.to.number}",
+        "comment": "You connected to the consumer {call.to.number} successfully",
+        "isPublic": false,
+        "requesterId": null,
+        "assigneeId": null,
+        "groupId": null,
+        "type": null,
+        "priority": null,
+        "status": null,
+        "voiceComment": false,
+        "tags": [
+          "babelforce",
+          "outbound"
+        ],
+        "removeTags": [],
+        "tagMode": "advanced",
+        "ticketFields": [],
+        "openTicket": false
+      },
+      "trigger": {
+        "id": "83fb85aaadaa4ecca904c4c7962c381f",
+        "name": "Call is outbound (no Browser Phone)",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "CALL",
+        "name": "taken",
+        "code": "call.taken",
+        "label": ""
+      },
+      "action": {
+        "type": "ZENDESK",
+        "name": "createTicket",
+        "code": "zendesk.createTicket",
+        "label": "",
+        "provider": "default",
+        "group": "zendesk"
+      },
+      "@id": "fb61c766b18b41b691f216baf3e78764"
+    },
+    {
+      "label": "ZD-IB: Push ticket to agent",
+      "priority": 3500,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "integrationId": "5b28350e7028493e86d34e90b6c654f3",
+        "agentId": -2
+      },
+      "trigger": {
+        "id": "494d284cf7c9425b8510ccd4189dc16c",
+        "name": "Always",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "CALL",
+        "name": "finish",
+        "code": "call.finish",
+        "label": ""
+      },
+      "action": {
+        "type": "ZENDESK",
+        "name": "openTicket",
+        "code": "zendesk.openTicket",
+        "label": "",
+        "provider": "default",
+        "group": "zendesk"
+      },
+      "@id": "9f8cea8ec72a4767b8d26a1f8c9d00bd"
+    },
+    {
+      "label": "ZD-IB: Make end-user requester",
+      "priority": 3700,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "integrationId": "5b28350e7028493e86d34e90b6c654f3",
+        "externalId": null,
+        "subject": null,
+        "comment": null,
+        "isPublic": false,
+        "requesterId": -3,
+        "assigneeId": -2,
+        "groupId": null,
+        "type": null,
+        "priority": null,
+        "status": null,
+        "voiceComment": false,
+        "tags": [],
+        "removeTags": [],
+        "tagMode": "advanced",
+        "ticketFields": [],
+        "openTicket": false
+      },
+      "trigger": {
+        "id": "494d284cf7c9425b8510ccd4189dc16c",
+        "name": "Always",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "CALL",
+        "name": "create",
+        "code": "call.create",
+        "label": ""
+      },
+      "action": {
+        "type": "ZENDESK",
+        "name": "updateTicket",
+        "code": "zendesk.updateTicket",
+        "label": "",
+        "provider": "default",
+        "group": "zendesk"
+      },
+      "@id": "4144b65ac3ea4707891d5d38fd8a7934"
+    },
+    {
+      "label": "ZD-IB: Create ticket for each new inbound call",
+      "priority": 3701,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "integrationId": "5b28350e7028493e86d34e90b6c654f3",
+        "externalId": null,
+        "subject": "Incoming call from {zendesk.enduser.name}",
+        "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
+        "isPublic": false,
+        "requesterId": null,
+        "assigneeId": null,
+        "groupId": null,
+        "type": null,
+        "priority": null,
+        "status": null,
+        "voiceComment": false,
+        "tags": [
+          "babelforce",
+          "call_inbound"
+        ],
+        "removeTags": [],
+        "tagMode": "simple",
+        "ticketFields": [],
+        "openTicket": false
+      },
+      "trigger": {
+        "id": "1d3d549dbd56493ab593f09e93ac2128",
+        "name": "Call is inbound",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "CALL",
+        "name": "create",
+        "code": "call.create",
+        "label": ""
+      },
+      "action": {
+        "type": "ZENDESK",
+        "name": "createTicket",
+        "code": "zendesk.createTicket",
+        "label": "",
+        "provider": "default",
+        "group": "zendesk"
+      },
+      "@id": "180b2ecd7e6e45eb95aaeb7128e211a2"
+    },
+    {
+      "label": "ZD-All: Lookup end-user in ZD",
+      "priority": 3900,
+      "enabled": true,
+      "invertTrigger": false,
+      "options": {
+        "timeout": 15000,
+        "integrationId": "5b28350e7028493e86d34e90b6c654f3",
+        "expression": "consumer.number"
+      },
+      "trigger": {
+        "id": "494d284cf7c9425b8510ccd4189dc16c",
+        "name": "Always",
+        "type": "ALL"
+      },
+      "event": {
+        "type": "CALL",
+        "name": "create",
+        "code": "call.create",
+        "label": ""
+      },
+      "action": {
+        "type": "ZENDESK",
+        "name": "lookup",
+        "code": "zendesk.lookup",
+        "label": "",
+        "provider": "default",
+        "group": "zendesk"
+      },
+      "@id": "73e6884c96f9497cac2191d8deaa938b"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "resource": "calendars",
+  "url": "/api/v2/calendars",
+  "items": [
+    {
+      "name": "default",
+      "timeZone": "Europe/Berlin",
+      "enabled": true,
+      "@id": "9a8e3f4d10794c79bdff646016bba1d4"
+    }
+  ]
+}
