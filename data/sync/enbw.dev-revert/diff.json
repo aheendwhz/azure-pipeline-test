@@ -1,25 +1,25 @@
 {
-  "created": 1591024809792,
+  "created": 1591025258056,
   "name": "enbw.dev-revert",
-  "from": "enbw.dev__temp",
-  "to": "enbw.dev",
+  "from": "enbw.dev",
+  "to": "enbw.dev__temp",
   "operations": [
     {
-      "type": "addition",
+      "type": "deletion",
       "order": 2,
       "resource": "events/triggers",
-      "sourceItem": {
-        "label": "I WILL BREAK IT",
-        "priority": 2,
+      "targetItem": {
+        "label": "THIS BREAKS EVERYTHING",
+        "priority": 5,
         "enabled": true,
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "message": "sfsdfsdfsdfdsf"
+          "message": "jhukfbghakldjfhjkdsf"
         },
         "trigger": {
-          "id": "2cf9fc21425d44f4aa6ddae1f8495d7a",
-          "name": "Maximum queue wait time reached",
+          "id": "1d3d549dbd56493ab593f09e93ac2128",
+          "name": "Call is inbound",
           "type": "ALL"
         },
         "event": {
@@ -36,37 +36,7 @@
           "provider": "default",
           "group": "log"
         },
-        "@id": "ab3203aa7684496ba91337e8ac06b2e6"
-      },
-      "body": {
-        "label": "I WILL BREAK IT",
-        "priority": 2,
-        "enabled": true,
-        "invertTrigger": false,
-        "options": {
-          "timeout": 15000,
-          "message": "sfsdfsdfsdfdsf"
-        },
-        "trigger": {
-          "id": "2cf9fc21425d44f4aa6ddae1f8495d7a",
-          "name": "Maximum queue wait time reached",
-          "type": "ALL"
-        },
-        "event": {
-          "type": "AGENT",
-          "name": "presence.change",
-          "code": "agent.presence.change",
-          "label": ""
-        },
-        "action": {
-          "type": "LOG",
-          "name": "message",
-          "code": "log.message",
-          "label": "",
-          "provider": "default",
-          "group": "log"
-        },
-        "@id": "ab3203aa7684496ba91337e8ac06b2e6"
+        "@id": "b9badc852fea4bb89461e90a224ffdfa"
       }
     },
     {
