@@ -4,11 +4,12 @@ set -e
 
 STAMP=$(date --iso-8601=seconds)
 
+_print() { echo; echo "\e[36;1m${1}"; echo; }
 
 # commit artifacts to version control
 commit() {
 
-  echo "committing current IVR states..."
+  _print "committing current IVR states..."
   git add . && git commit -m $STAMP
 
 }
@@ -21,13 +22,13 @@ pull_all() {
 
     local ENV=$(echo $i | cut -d'/' -f 4)
 
-    echo "pulling ${ENV}..."
+    _print "pulling ${ENV}..."
     rm -rf $i
     babelforce-ivr-sync get --env $ENV
 
   done
 
-  echo "all IVR states have been pulled"
+  _print "all IVR states have been pulled"
 }
 
 
