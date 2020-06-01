@@ -35,7 +35,7 @@
       "invertTrigger": false,
       "options": {
         "timeout": 15000,
-        "integrationId": "ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+        "integrationId": "ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
         "agentId": -2
       },
       "trigger": null,
@@ -62,7 +62,7 @@
       "invertTrigger": false,
       "options": {
         "timeout": 15000,
-        "integrationId": "ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+        "integrationId": "ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
         "externalId": null,
         "subject": null,
         "comment": null,
@@ -104,7 +104,7 @@
       "invertTrigger": false,
       "options": {
         "timeout": 15000,
-        "integrationId": "ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+        "integrationId": "ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
         "externalId": null,
         "subject": "Outbound call to {call.to.number}",
         "comment": "You connected to the consumer {call.to.number} successfully",
@@ -149,7 +149,7 @@
       "invertTrigger": false,
       "options": {
         "timeout": 15000,
-        "integrationId": "ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+        "integrationId": "ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
         "agentId": -2
       },
       "trigger": null,
@@ -176,7 +176,7 @@
       "invertTrigger": false,
       "options": {
         "timeout": 15000,
-        "integrationId": "ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+        "integrationId": "ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
         "externalId": null,
         "subject": null,
         "comment": null,
@@ -218,7 +218,7 @@
       "invertTrigger": false,
       "options": {
         "timeout": 15000,
-        "integrationId": "ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+        "integrationId": "ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
         "externalId": null,
         "subject": "Incoming call from {zendesk.enduser.name}",
         "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
@@ -263,7 +263,7 @@
       "invertTrigger": false,
       "options": {
         "timeout": 15000,
-        "integrationId": "ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+        "integrationId": "ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
         "expression": "consumer.number"
       },
       "trigger": null,
