@@ -32,7 +32,7 @@ environments:
 synchronize:
 
 
-  # target is versioned, source is current state
+  # source is versioned, target is current IVR state
   enbw.dev-revert:
     from: enbw.dev
     to: enbw.dev__temp
