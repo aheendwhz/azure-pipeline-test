@@ -34,21 +34,28 @@ pull_all() {
 
 case $1 in
 
-  # backup process is to pull latest state
-  # of IVRs and put into version control
+  # pull latest state of IVRs and version them
   "backup")
 
-    pull_all
-    commit
+    pull_all && commit
     ;;
 
   "rollback")
 
-    # hard-reset 1 commit & re-apply states
+    # pull current state & hard-reset 1 commit
     _print "rolling back to last IVR state versions..."
+    pull_all
     git reset --hard HEAD~1
 
-    # 
+    # print diff for sync task, then apply
+    babelforce-ivr-sync diff enbw.dev-revert
+    babelforce-ivr-sync apply enbw.dev-revert --no-confirm
+
+    commit && _print "rollback successful"
+    ;;
+
+  "deploy-prod")
+
     ;;
 
 esac
