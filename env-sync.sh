@@ -4,7 +4,7 @@ set -e
 
 STAMP=$(date --iso-8601=seconds)
 
-_print() { echo -e "\e[36;1m${1}"; }
+_print() { echo -e "\e[36;1m${1}\e[0m"; }
 
 # commit artifacts to version control
 commit() {
