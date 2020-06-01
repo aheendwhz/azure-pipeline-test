@@ -34,8 +34,8 @@ synchronize:
 
   # target is versioned, source is current state
   enbw.dev-revert:
-    from: enbw.dev__temp
-    to: enbw.dev
+    from: enbw.dev
+    to: enbw.dev__temp
 
   # standard deploy task
   enbw.dev-to-enbw.staging:
