@@ -1,21 +1,9 @@
 data: ./data
 
-
 environments:
 
-  # will+sync@babelforce.com
-  staging:
-    baseUrl: https://staging.dev.babelforce.com
-    auth:
-      accessId: 5d9f16d3-9090-4c21-979b-9f310ba8dea0
-      accessToken: aee66263da1b49fdad07e29c1c043a91
 
-  # also will+sync@babelforce.com
-  production:
-    baseUrl: https://services.babelforce.com
-    auth:
-      accessId: 908ea251-d5e4-437d-b0f1-a03a4524237f
-      accessToken: 414e31648d3a4e5d9e3e2ea3c16cae4f
+  # these are the main envs to be versioned
 
   enbw.dev:
     baseUrl: https://enbw.dev.babelforce.com
@@ -30,17 +18,26 @@ environments:
       accessToken: 1853397109ec4960ad131a270a61c3a0
 
 
+  ## this clone env is used to revert an env state to a previous version.
+  ## it is not versioned, so can be used to represent the current
+  ## state of IVRs for use in `diff` and `apply` tasks
+
+  enbw.dev__temp:
+    baseUrl: https://enbw.dev.babelforce.com
+    auth:
+      accessId: 912e699b-c019-45e5-a28b-ae38e63dfe25
+      accessToken: 5c2230c36a4f4222a2cbcf15e494197e
+
+
 synchronize:
 
-  # sync staging data to production
-  staging-to-prod:
-    from: staging
-    to: production
 
-  enbw.dev-backup:
-    from: enbw.dev
+  # target is versioned, source is current state
+  enbw.dev-revert:
+    from: enbw.dev__temp
     to: enbw.dev
 
+  # standard deploy task
   enbw.dev-to-enbw.staging:
     from: enbw.dev
     to: enbw.staging
