@@ -1,25 +1,143 @@
 {
-  "created": 1591006797623,
+  "created": 1591026923133,
   "name": "enbw.dev-to-enbw.staging",
   "from": "enbw.dev",
   "to": "enbw.staging",
   "operations": [
     {
       "type": "addition",
+      "order": -1,
+      "resource": "integrations",
+      "sourceItem": {
+        "type": "CUSTOM",
+        "provider": "babelforce",
+        "name": "babelforce",
+        "color": "#2fcaff",
+        "label": "CREATED ON DEV WOO",
+        "enabled": true,
+        "config": {
+          "baseUrl": "{{api_url}}/api/v2",
+          "defaults": {
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "method": "get",
+            "contentType": "application/json",
+            "params": null
+          },
+          "auth": {
+            "type": "oauth2",
+            "oauth2": {
+              "grants": [
+                "password",
+                "authorization_code"
+              ],
+              "clientId": "babelforce",
+              "grantType": "password"
+            },
+            "basic": null,
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "method": "get",
+            "contentType": "application/json",
+            "params": null
+          },
+          "userSync": null,
+          "userLookup": null,
+          "events": null,
+          "context": {
+            "api_url": "https://services.babelforce.com"
+          }
+        },
+        "@id": "1ff6d6d5449548beb59624b068ff5550"
+      },
+      "body": {
+        "type": "CUSTOM",
+        "provider": "babelforce",
+        "name": "babelforce",
+        "color": "#2fcaff",
+        "label": "CREATED ON DEV WOO",
+        "enabled": true,
+        "config": {
+          "baseUrl": "{{api_url}}/api/v2",
+          "defaults": {
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "method": "get",
+            "contentType": "application/json",
+            "params": null
+          },
+          "auth": {
+            "type": "oauth2",
+            "oauth2": {
+              "grants": [
+                "password",
+                "authorization_code"
+              ],
+              "clientId": "babelforce",
+              "grantType": "password"
+            },
+            "basic": null,
+            "body": null,
+            "uri": null,
+            "headers": null,
+            "method": "get",
+            "contentType": "application/json",
+            "params": null
+          },
+          "userSync": null,
+          "userLookup": null,
+          "events": null,
+          "context": {
+            "api_url": "https://services.babelforce.com"
+          }
+        },
+        "@id": "1ff6d6d5449548beb59624b068ff5550"
+      }
+    },
+    {
+      "type": "addition",
+      "order": -1,
+      "resource": "agents",
+      "sourceItem": {
+        "sourceId": "e6c1051c8d8c438fbf7fe0adf8094d00",
+        "agentSource": "internal",
+        "name": "BAD AGENT",
+        "number": null,
+        "enabled": false,
+        "email": null,
+        "tags": [],
+        "@id": "abc94ee1056b4ef5a698943ff7de5b53"
+      },
+      "body": {
+        "sourceId": "e6c1051c8d8c438fbf7fe0adf8094d00",
+        "agentSource": "internal",
+        "name": "BAD AGENT",
+        "number": null,
+        "enabled": false,
+        "email": null,
+        "tags": [],
+        "@id": "abc94ee1056b4ef5a698943ff7de5b53"
+      }
+    },
+    {
+      "type": "addition",
       "order": 2,
       "resource": "events/triggers",
       "sourceItem": {
-        "label": "CREATED ON DEV",
-        "priority": 12,
+        "label": "I WILL BREAK IT",
+        "priority": 2,
         "enabled": true,
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "message": "foo bar"
+          "message": "sfsdfsdfsdfdsf"
         },
         "trigger": {
-          "id": "494d284cf7c9425b8510ccd4189dc16c",
-          "name": "Always",
+          "id": "2cf9fc21425d44f4aa6ddae1f8495d7a",
+          "name": "Maximum queue wait time reached",
           "type": "ALL"
         },
         "event": {
@@ -36,9 +154,70 @@
           "provider": "default",
           "group": "log"
         },
-        "@id": "8cc989441ca749efacd9e11720659d18"
+        "@id": "ab3203aa7684496ba91337e8ac06b2e6"
       },
       "body": {
+        "label": "I WILL BREAK IT",
+        "priority": 2,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "message": "sfsdfsdfsdfdsf"
+        },
+        "trigger": {
+          "id": "ad20bdf1b3b04e7998a79095c52a3186",
+          "name": "Maximum queue wait time reached",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "AGENT",
+          "name": "presence.change",
+          "code": "agent.presence.change",
+          "label": ""
+        },
+        "action": {
+          "type": "LOG",
+          "name": "message",
+          "code": "log.message",
+          "label": "",
+          "provider": "default",
+          "group": "log"
+        },
+        "@id": "ab3203aa7684496ba91337e8ac06b2e6"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "CREATED ON DEV",
+        "priority": 12,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "message": "foo bar"
+        },
+        "trigger": null,
+        "event": {
+          "type": "AGENT",
+          "name": "presence.change",
+          "code": "agent.presence.change",
+          "label": ""
+        },
+        "action": {
+          "type": "LOG",
+          "name": "message",
+          "code": "log.message",
+          "label": "",
+          "provider": "default",
+          "group": "log"
+        },
+        "@id": "8cc989441ca749efacd9e11720659d18"
+      },
+      "targetItem": {
         "label": "CREATED ON DEV",
         "priority": 12,
         "enabled": true,
@@ -66,7 +245,1117 @@
           "provider": "default",
           "group": "log"
         },
-        "@id": "8cc989441ca749efacd9e11720659d18"
+        "@id": "ccbf50dbddc14fb986f15f89b8a0f11a"
+      },
+      "body": {
+        "label": "CREATED ON DEV",
+        "priority": 12,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "message": "foo bar"
+        },
+        "trigger": null,
+        "event": {
+          "type": "AGENT",
+          "name": "presence.change",
+          "code": "agent.presence.change",
+          "label": ""
+        },
+        "action": {
+          "type": "LOG",
+          "name": "message",
+          "code": "log.message",
+          "label": "",
+          "provider": "default",
+          "group": "log"
+        },
+        "@id": "ccbf50dbddc14fb986f15f89b8a0f11a"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-OB: Push ticket to agent",
+        "priority": 3748,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "agentId": -2
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "db3f8f0b47f2458ea4cbe3b698f0906c"
+      },
+      "targetItem": {
+        "label": "ZD-OB: Push ticket to agent",
+        "priority": 3748,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "84891639785b49fab5fac916af4e8692",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "f5dbc4ed9a2f4fa998251f0dcfba9c78"
+      },
+      "body": {
+        "label": "ZD-OB: Push ticket to agent",
+        "priority": 3748,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "agentId": -2
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "f5dbc4ed9a2f4fa998251f0dcfba9c78"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-OB: Make end-user requester",
+        "priority": 3749,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": true
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "f5bd28d116134a19b0a0d93683e19888"
+      },
+      "targetItem": {
+        "label": "ZD-OB: Make end-user requester",
+        "priority": 3749,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": true
+        },
+        "trigger": {
+          "id": "84891639785b49fab5fac916af4e8692",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "e269f5bb7f934990b855922f668a2c94"
+      },
+      "body": {
+        "label": "ZD-OB: Make end-user requester",
+        "priority": 3749,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": true
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "e269f5bb7f934990b855922f668a2c94"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-OB: Create ticket on bridged",
+        "priority": 3750,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": "Outbound call to {call.to.number}",
+          "comment": "You connected to the consumer {call.to.number} successfully",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "outbound"
+          ],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "fb61c766b18b41b691f216baf3e78764"
+      },
+      "targetItem": {
+        "label": "ZD-OB: Create ticket on bridged",
+        "priority": 3750,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "externalId": null,
+          "subject": "Outbound call to {call.to.number}",
+          "comment": "You connected to the consumer {call.to.number} successfully",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "outbound"
+          ],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "84891639785b49fab5fac916af4e8692",
+          "name": "Call is outbound (no Browser Phone)",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "ef735116b5d8456e984eb812796355c7"
+      },
+      "body": {
+        "label": "ZD-OB: Create ticket on bridged",
+        "priority": 3750,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": "Outbound call to {call.to.number}",
+          "comment": "You connected to the consumer {call.to.number} successfully",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "outbound"
+          ],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "taken",
+          "code": "call.taken",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "ef735116b5d8456e984eb812796355c7"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-IB: Push ticket to agent",
+        "priority": 3500,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "agentId": -2
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "finish",
+          "code": "call.finish",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "9f8cea8ec72a4767b8d26a1f8c9d00bd"
+      },
+      "targetItem": {
+        "label": "ZD-IB: Push ticket to agent",
+        "priority": 3500,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "agentId": -2
+        },
+        "trigger": {
+          "id": "d78722f793144889bf319db8eb84f7df",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "finish",
+          "code": "call.finish",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "b7a8abdc028746b6885b8e532ea7d678"
+      },
+      "body": {
+        "label": "ZD-IB: Push ticket to agent",
+        "priority": 3500,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "agentId": -2
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "finish",
+          "code": "call.finish",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "openTicket",
+          "code": "zendesk.openTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "b7a8abdc028746b6885b8e532ea7d678"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-IB: Make end-user requester",
+        "priority": 3700,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "4144b65ac3ea4707891d5d38fd8a7934"
+      },
+      "targetItem": {
+        "label": "ZD-IB: Make end-user requester",
+        "priority": 3700,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "d78722f793144889bf319db8eb84f7df",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "72a26f254dfa41d988f1ac16db8eb16a"
+      },
+      "body": {
+        "label": "ZD-IB: Make end-user requester",
+        "priority": 3700,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": null,
+          "comment": null,
+          "isPublic": false,
+          "requesterId": -3,
+          "assigneeId": -2,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [],
+          "removeTags": [],
+          "tagMode": "advanced",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "updateTicket",
+          "code": "zendesk.updateTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "72a26f254dfa41d988f1ac16db8eb16a"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-IB: Create ticket for each new inbound call",
+        "priority": 3701,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": "Incoming call from {zendesk.enduser.name}",
+          "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "call_inbound"
+          ],
+          "removeTags": [],
+          "tagMode": "simple",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "180b2ecd7e6e45eb95aaeb7128e211a2"
+      },
+      "targetItem": {
+        "label": "ZD-IB: Create ticket for each new inbound call",
+        "priority": 3701,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "externalId": null,
+          "subject": "Incoming call from {zendesk.enduser.name}",
+          "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "call_inbound"
+          ],
+          "removeTags": [],
+          "tagMode": "simple",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": {
+          "id": "a918d58d76024f3a92847929d3201dd1",
+          "name": "Call is inbound",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "0f09a00196df49ea889a09ee946f476e"
+      },
+      "body": {
+        "label": "ZD-IB: Create ticket for each new inbound call",
+        "priority": 3701,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "externalId": null,
+          "subject": "Incoming call from {zendesk.enduser.name}",
+          "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
+          "isPublic": false,
+          "requesterId": null,
+          "assigneeId": null,
+          "groupId": null,
+          "type": null,
+          "priority": null,
+          "status": null,
+          "voiceComment": false,
+          "tags": [
+            "babelforce",
+            "call_inbound"
+          ],
+          "removeTags": [],
+          "tagMode": "simple",
+          "ticketFields": [],
+          "openTicket": false
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "createTicket",
+          "code": "zendesk.createTicket",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "0f09a00196df49ea889a09ee946f476e"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "events/triggers",
+      "sourceItem": {
+        "label": "ZD-All: Lookup end-user in ZD",
+        "priority": 3900,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "expression": "consumer.number"
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "lookup",
+          "code": "zendesk.lookup",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "73e6884c96f9497cac2191d8deaa938b"
+      },
+      "targetItem": {
+        "label": "ZD-All: Lookup end-user in ZD",
+        "priority": 3900,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "expression": "consumer.number"
+        },
+        "trigger": {
+          "id": "d78722f793144889bf319db8eb84f7df",
+          "name": "Always",
+          "type": "ALL"
+        },
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "lookup",
+          "code": "zendesk.lookup",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "5190ec90b2904b74b2c355e9666f5793"
+      },
+      "body": {
+        "label": "ZD-All: Lookup end-user in ZD",
+        "priority": 3900,
+        "enabled": true,
+        "invertTrigger": false,
+        "options": {
+          "timeout": 15000,
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
+          "expression": "consumer.number"
+        },
+        "trigger": null,
+        "event": {
+          "type": "CALL",
+          "name": "create",
+          "code": "call.create",
+          "label": ""
+        },
+        "action": {
+          "type": "ZENDESK",
+          "name": "lookup",
+          "code": "zendesk.lookup",
+          "label": "",
+          "provider": "default",
+          "group": "zendesk"
+        },
+        "@id": "5190ec90b2904b74b2c355e9666f5793"
+      }
+    },
+    {
+      "type": "addition",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "BAD CHANGE 1",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": []
+        },
+        "@id": "2a7e1bd4621e4aa4997c844947d32d6e"
+      },
+      "body": {
+        "name": "BAD CHANGE 1",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": []
+        },
+        "@id": "2a7e1bd4621e4aa4997c844947d32d6e"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": []
+        },
+        "@id": "fc2e37b9f20f442c8d098e1648aae015"
+      },
+      "targetItem": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "1fdfe62a1acf4783a907a48b38fbfa03"
+          },
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": [
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "358f355731ec4fdc98aebcaa81b8b60e"
+              },
+              "application": {
+                "id": "dd968ad47fd64916b8428290dbe5fe02"
+              },
+              "priority": 400
+            },
+            {
+              "trigger": {
+                "invert": false,
+                "enabled": true,
+                "id": "18846717e5af45249bd14b09a207edbb"
+              },
+              "application": {
+                "id": "dd968ad47fd64916b8428290dbe5fe02"
+              },
+              "priority": 300
+            }
+          ]
+        },
+        "@id": "daddeea754ca4f9daa5d6bd5076daaa3"
+      },
+      "body": {
+        "name": "1.0 - Calendars, business hours, enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "switchNode",
+        "tags": [
+          "routing",
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [],
+          "enableSwitching": true,
+          "triggers": []
+        },
+        "@id": "daddeea754ca4f9daa5d6bd5076daaa3"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "367fde5dce66490781c20c87ddc0afc7",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "97f1ebf41fad44cd825af762c07fe768"
+      },
+      "targetItem": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "cff8bbc0ec364aa09033aa9c0271cc07"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "29cdf34299614b78ba447fb110a466eb",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "f929cbe05681472794ce2a04f069da8d"
+      },
+      "body": {
+        "name": "1.1 - Welcome - agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "29cdf34299614b78ba447fb110a466eb",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "f929cbe05681472794ce2a04f069da8d"
+      }
+    },
+    {
+      "type": "update",
+      "order": 2,
+      "resource": "applications",
+      "sourceItem": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "2edafe81c458457db1e2e5f1dfb6d422",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "8cf25b476bab495d8a3374ea2c863390"
+      },
+      "targetItem": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": {
+            "id": "dd968ad47fd64916b8428290dbe5fe02"
+          },
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "6f468659aec1430782dd016828799308",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "1fdfe62a1acf4783a907a48b38fbfa03"
+      },
+      "body": {
+        "name": "1.2 - Welcome only - no agents enabled",
+        "friendlyName": null,
+        "enabled": true,
+        "module": "promptPlayer",
+        "tags": [
+          "welcome"
+        ],
+        "settings": {
+          "flowEndApplication": null,
+          "prompts": [
+            {
+              "key": "prompt-0",
+              "id": "6f468659aec1430782dd016828799308",
+              "enabled": true,
+              "startDelay": 0,
+              "endPause": 0
+            }
+          ]
+        },
+        "@id": "1fdfe62a1acf4783a907a48b38fbfa03"
       }
     }
   ]
