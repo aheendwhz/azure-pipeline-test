@@ -1,6 +1,9 @@
+pool:
+  vmImage: 'ubuntu-16.04'
 
 jobs:
-
+  
   - job: say_hello
+    timeoutInMinutes: 10
     steps:
       - script: 'echo "hello world"'
