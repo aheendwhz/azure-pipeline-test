@@ -9,22 +9,27 @@ pool:
 
 jobs:
 
+  # build something in a container & publish it
   - job: create_file
     container: deb
     timeoutInMinutes: 5
     steps:
-      - checkout: self
-        persistCredentials: true
       - bash: |
           echo "creating a file..."
-          touch $(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
+          mkdir build
+          touch build/$(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
+      - publish: $(Build.SourcesDirectory)/build
+        artifact: my_build
 
+  # download build artifact and put in version control 
   - job: commit_file
     dependsOn: create_file
     timeoutInMinutes: 3
     steps:
       - checkout: self
         persistCredentials: true
+      - download: current
+        artifact: my_build
       - bash: |
           git config --global user.email "wjconnor123@gmail.com"
           git config --global user.name "William Connor"
