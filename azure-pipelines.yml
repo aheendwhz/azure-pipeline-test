@@ -16,6 +16,8 @@ jobs:
       - checkout: self
         persistCredentials: true
       - bash: |
+          git config --global user.email "wjconnor123@gmail.com"
+          git config --global user.name "William Connor"
           git status
           echo "creating a file..."
           touch foo.txt
