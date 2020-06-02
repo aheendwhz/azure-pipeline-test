@@ -1,1 +1,6 @@
 
+jobs:
+
+  - job: say_hello
+    steps:
+      - script: 'echo "hello world"'
