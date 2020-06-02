@@ -20,6 +20,6 @@ jobs:
           git config --global user.name "William Connor"
           git status
           echo "creating a file..."
-          touch foo.txt
+          touch $(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
           git add . && git commit -m "added a file [skip ci]"
-          git push
+          git push origin HEAD:master
