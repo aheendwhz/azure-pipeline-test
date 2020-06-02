@@ -31,7 +31,7 @@ jobs:
       - task: DownloadPipelineArtifact@2
         inputs:
           artifact: my_build
-          path: $(Build.SourcesDirectory)
+          path: $(Build.SourcesDirectory)/build
       - bash: |
           echo "current directory is $(pwd)"
           git config --global user.email "wjconnor123@gmail.com"
