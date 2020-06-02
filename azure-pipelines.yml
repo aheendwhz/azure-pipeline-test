@@ -1,7 +1,8 @@
 resources:
   containers:
     - container: deb
-      image: debian:stable-slim
+      image: samueldebruyn/debian-git
+      #image: debian:stable-slim
 
 pool:
   vmImage: ubuntu-16.04
