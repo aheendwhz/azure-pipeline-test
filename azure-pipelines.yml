@@ -1,25 +1,30 @@
 resources:
   containers:
     - container: deb
-      image: samueldebruyn/debian-git
-      #image: debian:stable-slim
+      #image: samueldebruyn/debian-git
+      image: debian:stable-slim
 
 pool:
   vmImage: ubuntu-16.04
 
 jobs:
 
-  - job: say_hello
+  - job: create_file
     container: deb
-    timeoutInMinutes: 3
+    timeoutInMinutes: 5
     steps:
       - checkout: self
         persistCredentials: true
       - bash: |
+          echo "creating a file..."
+          touch $(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
+
+  - job: commit_file
+    timeoutInMinutes: 3
+    steps:
+      - bash: |
           git config --global user.email "wjconnor123@gmail.com"
           git config --global user.name "William Connor"
           git status
-          echo "creating a file..."
-          touch $(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
           git add . && git commit -m "added a file [skip ci]"
           git push origin HEAD:master
