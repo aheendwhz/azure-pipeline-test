@@ -28,9 +28,12 @@ jobs:
     steps:
       - checkout: self
         persistCredentials: true
-      - download: current
-        artifact: my_build
+      - task: DownloadPipelineArtifact@2
+        inputs:
+          artifact: my_build
+          path: $(Build.SourcesDirectory)
       - bash: |
+          echo "current directory is $(pwd)"
           git config --global user.email "wjconnor123@gmail.com"
           git config --global user.name "William Connor"
           git status
