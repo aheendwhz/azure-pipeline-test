@@ -1,17 +1,21 @@
+resources:
+  containers:
+    - container: deb
+      image: debian:stable-slim
+
 pool:
   vmImage: ubuntu-16.04
 
 jobs:
 
   - job: say_hello
-    container: debian:stable-slim
+    container: deb
     timeoutInMinutes: 3
     steps:
-      - script: echo "hello world"
-
-    
-  - job: say_goodbye
-    container: debian:stable-slim
-    timeoutInMinutes: 3
-    steps:
-      - script: echo "goodbye crual world"
+      - checkout: self
+        persistCredentials: true
+      - bash: |
+          git status
+          echo "creating a file..."
+          touch foo.txt
+          git add . && git commit -m "added a file [skip ci]"
