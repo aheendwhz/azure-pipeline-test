@@ -3,6 +3,16 @@
   "url": "/api/v2/agents",
   "items": [
     {
+      "sourceId": "e6c1051c8d8c438fbf7fe0adf8094d00",
+      "agentSource": "internal",
+      "name": "BAD AGENT",
+      "number": null,
+      "enabled": false,
+      "email": null,
+      "tags": [],
+      "@id": "f15541da5ae64a879c77cec945af6faa"
+    },
+    {
       "sourceId": "3d0dd0f04742446ba98ec6ea9414501c",
       "agentSource": "internal",
       "name": "CREATED ON DEV",

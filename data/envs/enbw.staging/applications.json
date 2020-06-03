@@ -12,35 +12,10 @@
         "welcome"
       ],
       "settings": {
-        "flowEndApplication": {
-          "id": "1fdfe62a1acf4783a907a48b38fbfa03"
-        },
+        "flowEndApplication": null,
         "prompts": [],
         "enableSwitching": true,
-        "triggers": [
-          {
-            "trigger": {
-              "invert": false,
-              "enabled": true,
-              "id": "358f355731ec4fdc98aebcaa81b8b60e"
-            },
-            "application": {
-              "id": "dd968ad47fd64916b8428290dbe5fe02"
-            },
-            "priority": 400
-          },
-          {
-            "trigger": {
-              "invert": false,
-              "enabled": true,
-              "id": "18846717e5af45249bd14b09a207edbb"
-            },
-            "application": {
-              "id": "dd968ad47fd64916b8428290dbe5fe02"
-            },
-            "priority": 300
-          }
-        ]
+        "triggers": []
       },
       "@id": "daddeea754ca4f9daa5d6bd5076daaa3"
     },
@@ -53,9 +28,7 @@
         "welcome"
       ],
       "settings": {
-        "flowEndApplication": {
-          "id": "cff8bbc0ec364aa09033aa9c0271cc07"
-        },
+        "flowEndApplication": null,
         "prompts": [
           {
             "key": "prompt-0",
@@ -77,9 +50,7 @@
         "welcome"
       ],
       "settings": {
-        "flowEndApplication": {
-          "id": "dd968ad47fd64916b8428290dbe5fe02"
-        },
+        "flowEndApplication": null,
         "prompts": [
           {
             "key": "prompt-0",
@@ -261,6 +232,18 @@
         ]
       },
       "@id": "dd968ad47fd64916b8428290dbe5fe02"
+    },
+    {
+      "name": "BAD CHANGE 1",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "promptPlayer",
+      "tags": [],
+      "settings": {
+        "flowEndApplication": null,
+        "prompts": []
+      },
+      "@id": "8a7e47400d2d452f97648a9081b9d0f0"
     },
     {
       "name": "CREATED ON DEV",

@@ -3,6 +3,50 @@
   "url": "/api/v2/integrations",
   "items": [
     {
+      "type": "CUSTOM",
+      "provider": "babelforce",
+      "name": "babelforce",
+      "color": "#2fcaff",
+      "label": "CREATED ON DEV WOO",
+      "enabled": true,
+      "config": {
+        "baseUrl": "{{api_url}}/api/v2",
+        "defaults": {
+          "body": null,
+          "uri": null,
+          "headers": null,
+          "method": "get",
+          "contentType": "application/json",
+          "params": null
+        },
+        "auth": {
+          "type": "oauth2",
+          "oauth2": {
+            "grants": [
+              "password",
+              "authorization_code"
+            ],
+            "clientId": "babelforce",
+            "grantType": "password"
+          },
+          "basic": null,
+          "body": null,
+          "uri": null,
+          "headers": null,
+          "method": "get",
+          "contentType": "application/json",
+          "params": null
+        },
+        "userSync": null,
+        "userLookup": null,
+        "events": null,
+        "context": {
+          "api_url": "https://services.babelforce.com"
+        }
+      },
+      "@id": "1ae2092e05894ff0acfee3aaed14e5bc"
+    },
+    {
       "type": "ZENDESK",
       "provider": "zendesk",
       "name": null,
