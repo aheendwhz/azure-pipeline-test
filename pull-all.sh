@@ -10,7 +10,7 @@ for i in ./data/envs/*; do
 
   _print "pulling ${ENV}..."
   rm -rf $i
-  babelforce-ivr-sync get --env $ENV
+  babelforce-ivr-sync get --env $ENV --no-banner
 
 done
 
