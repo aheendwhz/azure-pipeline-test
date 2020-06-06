@@ -87,7 +87,7 @@ stages:
     jobs:
 
       - deployment: rollback
-        displayName: Roll dev IVR back 1 commit
+        displayName: Roll dev IVR back to previous version
         environment: rollback
         strategy:
           runOnce:
@@ -104,7 +104,7 @@ stages:
                     echo "rolling back to previous IVR states..."
                     git fetch --all
                     git checkout master
-                    git reset --hard HEAD~1
+                    git revert HEAD --no-edit
 
 
                     echo "building and running sync image..."
@@ -134,5 +134,6 @@ stages:
 
                     echo "versioning new IVR states..."
                     git status
-                    git add . && git commit -m "rolled dev IVR back 1 commit [skip ci]"
+                    git pull
+                    git add . && git commit -m "rolled dev IVR back [skip ci]"
                     git push origin HEAD:master
