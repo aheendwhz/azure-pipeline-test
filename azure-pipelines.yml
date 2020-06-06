@@ -112,6 +112,12 @@ stages:
                     docker run \
                       --mount $MNT \
                       ivr-sync \
+                      babelforce-ivr-sync get --env enbw.dev__temp \
+                      --no-banner
+
+                    docker run \
+                      --mount $MNT \
+                      ivr-sync \
                       babelforce-ivr-sync diff enbw.dev-revert \
                       --no-banner
 
