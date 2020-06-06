@@ -102,6 +102,8 @@ stages:
                     ls -lah
 
                     echo "rolling back to previous IVR states..."
+                    git fetch --all
+                    git checkout master
                     git reset --hard HEAD~1
 
 
