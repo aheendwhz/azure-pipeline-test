@@ -10,6 +10,10 @@ jobs:
     environment: pull
     strategy:
       runOnce:
+        preDeploy:
+          steps:
+            - checkout: self
+              persistCredentials: true
         deploy:
           steps:
             - bash: |
