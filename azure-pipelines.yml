@@ -75,5 +75,55 @@ stages:
                     git config --global user.email "wjconnor123@gmail.com"
                     git config --global user.name "William Connor"
                     git status
-                    git add . && git commit -m "pulled all IVRs [skip ci]"
+                    git add . && git commit -m "deployed dev IVR to staging [skip ci]"
+                    git push origin HEAD:master
+
+
+  - stage: rollback
+    condition: always()
+    pool:
+      vmImage: ubuntu-16.04
+
+    jobs:
+
+      - deployment: rollback
+        displayName: Roll dev IVR back 1 commit
+        environment: rollback
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                  persistCredentials: true
+                - bash: |
+                    git config --global user.email "wjconnor123@gmail.com"
+                    git config --global user.name "William Connor"
+                    ls -lah
+
+                    echo "rolling back to previous IVR states..."
+                    git reset --hard HEAD~1
+
+
+                    echo "building and running sync image..."
+                    MNT="type=bind,src=$(pwd)/data,dst=/sync/data"
+
+                    docker build -t ivr-sync .
+
+                    docker run \
+                      --mount $MNT \
+                      ivr-sync \
+                      babelforce-ivr-sync diff enbw.dev-revert \
+                      --no-banner
+
+                    docker run \
+                      --rm \
+                      --mount $MNT \
+                      ivr-sync \
+                      babelforce-ivr-sync apply enbw.dev-revert \
+                      --no-confirm \
+                      --no-banner
+
+                    echo "versioning new IVR states..."
+                    git status
+                    git add . && git commit -m "rolled dev IVR back 1 commit [skip ci]"
                     git push origin HEAD:master
