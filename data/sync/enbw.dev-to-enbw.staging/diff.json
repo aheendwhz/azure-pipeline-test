@@ -1,5 +1,5 @@
 {
-  "created": 1591093179395,
+  "created": 1591474681573,
   "name": "enbw.dev-to-enbw.staging",
   "from": "enbw.dev",
   "to": "enbw.staging",
@@ -7,184 +7,26 @@
     {
       "type": "addition",
       "order": -1,
-      "resource": "integrations",
-      "sourceItem": {
-        "type": "CUSTOM",
-        "provider": "babelforce",
-        "name": "babelforce",
-        "color": "#2fcaff",
-        "label": "CREATED ON DEV WOO",
-        "enabled": true,
-        "config": {
-          "baseUrl": "{{api_url}}/api/v2",
-          "defaults": {
-            "body": null,
-            "uri": null,
-            "headers": null,
-            "method": "get",
-            "contentType": "application/json",
-            "params": null
-          },
-          "auth": {
-            "type": "oauth2",
-            "oauth2": {
-              "grants": [
-                "password",
-                "authorization_code"
-              ],
-              "clientId": "babelforce",
-              "grantType": "password"
-            },
-            "basic": null,
-            "body": null,
-            "uri": null,
-            "headers": null,
-            "method": "get",
-            "contentType": "application/json",
-            "params": null
-          },
-          "userSync": null,
-          "userLookup": null,
-          "events": null,
-          "context": {
-            "api_url": "https://services.babelforce.com"
-          }
-        },
-        "@id": "1ff6d6d5449548beb59624b068ff5550"
-      },
-      "body": {
-        "type": "CUSTOM",
-        "provider": "babelforce",
-        "name": "babelforce",
-        "color": "#2fcaff",
-        "label": "CREATED ON DEV WOO",
-        "enabled": true,
-        "config": {
-          "baseUrl": "{{api_url}}/api/v2",
-          "defaults": {
-            "body": null,
-            "uri": null,
-            "headers": null,
-            "method": "get",
-            "contentType": "application/json",
-            "params": null
-          },
-          "auth": {
-            "type": "oauth2",
-            "oauth2": {
-              "grants": [
-                "password",
-                "authorization_code"
-              ],
-              "clientId": "babelforce",
-              "grantType": "password"
-            },
-            "basic": null,
-            "body": null,
-            "uri": null,
-            "headers": null,
-            "method": "get",
-            "contentType": "application/json",
-            "params": null
-          },
-          "userSync": null,
-          "userLookup": null,
-          "events": null,
-          "context": {
-            "api_url": "https://services.babelforce.com"
-          }
-        },
-        "@id": "1ff6d6d5449548beb59624b068ff5550"
-      }
-    },
-    {
-      "type": "addition",
-      "order": -1,
       "resource": "agents",
       "sourceItem": {
-        "sourceId": "e6c1051c8d8c438fbf7fe0adf8094d00",
+        "sourceId": "0e76949f91894c13b5e3d78fc5ac976a",
         "agentSource": "internal",
-        "name": "BAD AGENT",
+        "name": "ANOTHER AGENT, PLZ SYNC",
         "number": null,
         "enabled": false,
         "email": null,
         "tags": [],
-        "@id": "abc94ee1056b4ef5a698943ff7de5b53"
+        "@id": "8638b93c58654e619886b43061f36d54"
       },
       "body": {
-        "sourceId": "e6c1051c8d8c438fbf7fe0adf8094d00",
+        "sourceId": "0e76949f91894c13b5e3d78fc5ac976a",
         "agentSource": "internal",
-        "name": "BAD AGENT",
+        "name": "ANOTHER AGENT, PLZ SYNC",
         "number": null,
         "enabled": false,
         "email": null,
         "tags": [],
-        "@id": "abc94ee1056b4ef5a698943ff7de5b53"
-      }
-    },
-    {
-      "type": "addition",
-      "order": 2,
-      "resource": "events/triggers",
-      "sourceItem": {
-        "label": "I WILL BREAK IT",
-        "priority": 2,
-        "enabled": true,
-        "invertTrigger": false,
-        "options": {
-          "timeout": 15000,
-          "message": "sfsdfsdfsdfdsf"
-        },
-        "trigger": {
-          "id": "2cf9fc21425d44f4aa6ddae1f8495d7a",
-          "name": "Maximum queue wait time reached",
-          "type": "ALL"
-        },
-        "event": {
-          "type": "AGENT",
-          "name": "presence.change",
-          "code": "agent.presence.change",
-          "label": ""
-        },
-        "action": {
-          "type": "LOG",
-          "name": "message",
-          "code": "log.message",
-          "label": "",
-          "provider": "default",
-          "group": "log"
-        },
-        "@id": "ab3203aa7684496ba91337e8ac06b2e6"
-      },
-      "body": {
-        "label": "I WILL BREAK IT",
-        "priority": 2,
-        "enabled": true,
-        "invertTrigger": false,
-        "options": {
-          "timeout": 15000,
-          "message": "sfsdfsdfsdfdsf"
-        },
-        "trigger": {
-          "id": "ad20bdf1b3b04e7998a79095c52a3186",
-          "name": "Maximum queue wait time reached",
-          "type": "ALL"
-        },
-        "event": {
-          "type": "AGENT",
-          "name": "presence.change",
-          "code": "agent.presence.change",
-          "label": ""
-        },
-        "action": {
-          "type": "LOG",
-          "name": "message",
-          "code": "log.message",
-          "label": "",
-          "provider": "default",
-          "group": "log"
-        },
-        "@id": "ab3203aa7684496ba91337e8ac06b2e6"
+        "@id": "8638b93c58654e619886b43061f36d54"
       }
     },
     {
@@ -312,7 +154,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "agentId": -2
         },
         "trigger": {
@@ -417,7 +259,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": null,
           "comment": null,
@@ -555,7 +397,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": "Outbound call to {call.to.number}",
           "comment": "You connected to the consumer {call.to.number} successfully",
@@ -681,7 +523,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "agentId": -2
         },
         "trigger": {
@@ -786,7 +628,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": null,
           "comment": null,
@@ -924,7 +766,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "externalId": null,
           "subject": "Incoming call from {zendesk.enduser.name}",
           "comment": "Incoming babelforce voice call from {call.from.number}. The caller reached us by dialing {call.to.number}.",
@@ -1050,7 +892,7 @@
         "invertTrigger": false,
         "options": {
           "timeout": 15000,
-          "integrationId": "9b182abe032043c6b0794bbd27655747",
+          "integrationId": "ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/ref/integrations/5b28350e7028493e86d34e90b6c654f3",
           "expression": "consumer.number"
         },
         "trigger": {
@@ -1107,255 +949,42 @@
       "order": 2,
       "resource": "applications",
       "sourceItem": {
-        "name": "BAD CHANGE 1",
+        "name": "NEW APP",
         "friendlyName": null,
         "enabled": true,
-        "module": "promptPlayer",
+        "module": "inputReader",
         "tags": [],
         "settings": {
           "flowEndApplication": null,
-          "prompts": []
+          "prompts": [],
+          "resultVariableName": "answer",
+          "terminationDigit": "NONE",
+          "readTimeout": 3,
+          "min": 1,
+          "max": 2,
+          "maxRetries": 2,
+          "ignoreNoInput": true
         },
-        "@id": "2a7e1bd4621e4aa4997c844947d32d6e"
+        "@id": "29596a5751e04257b35d78ff81c31f13"
       },
       "body": {
-        "name": "BAD CHANGE 1",
+        "name": "NEW APP",
         "friendlyName": null,
         "enabled": true,
-        "module": "promptPlayer",
+        "module": "inputReader",
         "tags": [],
         "settings": {
           "flowEndApplication": null,
-          "prompts": []
-        },
-        "@id": "2a7e1bd4621e4aa4997c844947d32d6e"
-      }
-    },
-    {
-      "type": "update",
-      "order": 2,
-      "resource": "applications",
-      "sourceItem": {
-        "name": "1.0 - Calendars, business hours, enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "switchNode",
-        "tags": [
-          "routing",
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": null,
           "prompts": [],
-          "enableSwitching": true,
-          "triggers": []
+          "resultVariableName": "answer",
+          "terminationDigit": "NONE",
+          "readTimeout": 3,
+          "min": 1,
+          "max": 2,
+          "maxRetries": 2,
+          "ignoreNoInput": true
         },
-        "@id": "fc2e37b9f20f442c8d098e1648aae015"
-      },
-      "targetItem": {
-        "name": "1.0 - Calendars, business hours, enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "switchNode",
-        "tags": [
-          "routing",
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": {
-            "id": "1fdfe62a1acf4783a907a48b38fbfa03"
-          },
-          "prompts": [],
-          "enableSwitching": true,
-          "triggers": [
-            {
-              "trigger": {
-                "invert": false,
-                "enabled": true,
-                "id": "358f355731ec4fdc98aebcaa81b8b60e"
-              },
-              "application": {
-                "id": "dd968ad47fd64916b8428290dbe5fe02"
-              },
-              "priority": 400
-            },
-            {
-              "trigger": {
-                "invert": false,
-                "enabled": true,
-                "id": "18846717e5af45249bd14b09a207edbb"
-              },
-              "application": {
-                "id": "dd968ad47fd64916b8428290dbe5fe02"
-              },
-              "priority": 300
-            }
-          ]
-        },
-        "@id": "daddeea754ca4f9daa5d6bd5076daaa3"
-      },
-      "body": {
-        "name": "1.0 - Calendars, business hours, enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "switchNode",
-        "tags": [
-          "routing",
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": null,
-          "prompts": [],
-          "enableSwitching": true,
-          "triggers": []
-        },
-        "@id": "daddeea754ca4f9daa5d6bd5076daaa3"
-      }
-    },
-    {
-      "type": "update",
-      "order": 2,
-      "resource": "applications",
-      "sourceItem": {
-        "name": "1.1 - Welcome - agents enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "promptPlayer",
-        "tags": [
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": null,
-          "prompts": [
-            {
-              "key": "prompt-0",
-              "id": "367fde5dce66490781c20c87ddc0afc7",
-              "enabled": true,
-              "startDelay": 0,
-              "endPause": 0
-            }
-          ]
-        },
-        "@id": "97f1ebf41fad44cd825af762c07fe768"
-      },
-      "targetItem": {
-        "name": "1.1 - Welcome - agents enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "promptPlayer",
-        "tags": [
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": {
-            "id": "cff8bbc0ec364aa09033aa9c0271cc07"
-          },
-          "prompts": [
-            {
-              "key": "prompt-0",
-              "id": "29cdf34299614b78ba447fb110a466eb",
-              "enabled": true,
-              "startDelay": 0,
-              "endPause": 0
-            }
-          ]
-        },
-        "@id": "f929cbe05681472794ce2a04f069da8d"
-      },
-      "body": {
-        "name": "1.1 - Welcome - agents enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "promptPlayer",
-        "tags": [
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": null,
-          "prompts": [
-            {
-              "key": "prompt-0",
-              "id": "29cdf34299614b78ba447fb110a466eb",
-              "enabled": true,
-              "startDelay": 0,
-              "endPause": 0
-            }
-          ]
-        },
-        "@id": "f929cbe05681472794ce2a04f069da8d"
-      }
-    },
-    {
-      "type": "update",
-      "order": 2,
-      "resource": "applications",
-      "sourceItem": {
-        "name": "1.2 - Welcome only - no agents enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "promptPlayer",
-        "tags": [
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": null,
-          "prompts": [
-            {
-              "key": "prompt-0",
-              "id": "2edafe81c458457db1e2e5f1dfb6d422",
-              "enabled": true,
-              "startDelay": 0,
-              "endPause": 0
-            }
-          ]
-        },
-        "@id": "8cf25b476bab495d8a3374ea2c863390"
-      },
-      "targetItem": {
-        "name": "1.2 - Welcome only - no agents enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "promptPlayer",
-        "tags": [
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": {
-            "id": "dd968ad47fd64916b8428290dbe5fe02"
-          },
-          "prompts": [
-            {
-              "key": "prompt-0",
-              "id": "6f468659aec1430782dd016828799308",
-              "enabled": true,
-              "startDelay": 0,
-              "endPause": 0
-            }
-          ]
-        },
-        "@id": "1fdfe62a1acf4783a907a48b38fbfa03"
-      },
-      "body": {
-        "name": "1.2 - Welcome only - no agents enabled",
-        "friendlyName": null,
-        "enabled": true,
-        "module": "promptPlayer",
-        "tags": [
-          "welcome"
-        ],
-        "settings": {
-          "flowEndApplication": null,
-          "prompts": [
-            {
-              "key": "prompt-0",
-              "id": "6f468659aec1430782dd016828799308",
-              "enabled": true,
-              "startDelay": 0,
-              "endPause": 0
-            }
-          ]
-        },
-        "@id": "1fdfe62a1acf4783a907a48b38fbfa03"
+        "@id": "29596a5751e04257b35d78ff81c31f13"
       }
     }
   ]
