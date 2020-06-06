@@ -13,10 +13,10 @@
         "baseUrl": "{{api_url}}/api/v2",
         "defaults": {
           "body": null,
-          "uri": null,
           "headers": null,
-          "method": "get",
+          "uri": null,
           "contentType": "application/json",
+          "method": "get",
           "params": null
         },
         "auth": {
@@ -31,10 +31,10 @@
           },
           "basic": null,
           "body": null,
-          "uri": null,
           "headers": null,
-          "method": "get",
+          "uri": null,
           "contentType": "application/json",
+          "method": "get",
           "params": null
         },
         "userSync": null,
