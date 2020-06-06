@@ -28,3 +28,41 @@ jobs:
                 git push origin HEAD:master
 
 
+  - deployment: deploy_to_staging
+    displayName: Deploy dev IVR to staging
+    environment: deploy
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - checkout: self
+              persistCredentials: true
+            - bash: |
+                ls -lah
+                
+                echo "building and running sync image..."
+                MNT="type=bind,src=$(pwd)/data,dst=/sync/data"
+                
+                docker build -t ivr-sync .
+                docker run --mount $MNT ivr-sync ./pull-all.sh
+
+                docker run \
+                  --mount $MNT \
+                  ivr-sync \
+                  babelforce-ivr-sync diff enbw.dev-to-enbw.staging \
+                  --no-banner
+
+                docker run \
+                  --rm \
+                  --mount $MNT \
+                  ivr-sync \
+                  babelforce-ivr-sync apply enbw.dev-to-enbw.staging \
+                  --no-confirm \
+                  --no-banner
+
+                echo "versioning new IVR states..."
+                git config --global user.email "wjconnor123@gmail.com"
+                git config --global user.name "William Connor"
+                git status
+                git add . && git commit -m "pulled all IVRs [skip ci]"
+                git push origin HEAD:master
