@@ -10,12 +10,10 @@ jobs:
     environment: pull
     strategy:
       runOnce:
-        preDeploy:
+        deploy:
           steps:
             - checkout: self
               persistCredentials: true
-        deploy:
-          steps:
             - bash: |
                 ls -lah
                 echo "building and running sync image..."
