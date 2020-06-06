@@ -18,7 +18,7 @@ jobs:
           ls -lah
           echo "building and running sync image..."
           docker build -t ivr-sync .
-          docker run --rm -ti ivr-sync babelforce-ivr-sync help
+          docker run --rm ivr-sync babelforce-ivr-sync help
           echo "creating a file..."
           mkdir build
           touch build/$(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
