@@ -1,45 +1,43 @@
-# resources:
-#   containers:
-#     - container: deb
-#       #image: samueldebruyn/debian-git
-#       image: debian:stable-slim
+
 
 pool:
   vmImage: ubuntu-16.04
 
 jobs:
 
-  # build something in a container & publish it
-  - job: create_file
-    #container: deb
-    timeoutInMinutes: 5
-    steps:
-      - bash: |
-          ls -lah
-          echo "building and running sync image..."
-          docker build -t ivr-sync .
-          docker run --rm ivr-sync babelforce-ivr-sync help
-          echo "creating a file..."
-          mkdir build
-          touch build/$(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
-      - publish: $(Build.SourcesDirectory)/build
-        artifact: my_build
+  - deployment: pull_envs
+    displayName: Pull & store states of all envs
+    environment: pull
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - bash: |
+                ls -lah
+                echo "building and running sync image..."
+                docker build -t ivr-sync .
+                docker run --rm ivr-sync babelforce-ivr-sync help
+                echo "creating a file..."
+                mkdir build
+                touch build/$(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
+            - publish: $(Build.SourcesDirectory)/build
+              artifact: my_build
 
-  # download build artifact and put in version control 
-  - job: commit_file
-    dependsOn: create_file
-    timeoutInMinutes: 3
-    steps:
-      - checkout: self
-        persistCredentials: true
-      - task: DownloadPipelineArtifact@2
-        inputs:
-          artifact: my_build
-          path: $(Build.SourcesDirectory)/build
-      - bash: |
-          echo "current directory is $(pwd)"
-          git config --global user.email "wjconnor123@gmail.com"
-          git config --global user.name "William Connor"
-          git status
-          git add . && git commit -m "added a file [skip ci]"
-          git push origin HEAD:master
+  # # download build artifact and put in version control 
+  # - job: commit_file
+  #   dependsOn: create_file
+  #   timeoutInMinutes: 3
+  #   steps:
+  #     - checkout: self
+  #       persistCredentials: true
+  #     - task: DownloadPipelineArtifact@2
+  #       inputs:
+  #         artifact: my_build
+  #         path: $(Build.SourcesDirectory)/build
+  #     - bash: |
+  #         echo "current directory is $(pwd)"
+  #         git config --global user.email "wjconnor123@gmail.com"
+  #         git config --global user.name "William Connor"
+  #         git status
+  #         git add . && git commit -m "added a file [skip ci]"
+  #         git push origin HEAD:master
