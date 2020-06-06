@@ -94,6 +94,7 @@ stages:
             deploy:
               steps:
                 - checkout: self
+                  clean: true
                   persistCredentials: true
                 - bash: |
                     git config --global user.email "wjconnor123@gmail.com"
