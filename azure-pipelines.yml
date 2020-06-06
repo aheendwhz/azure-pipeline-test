@@ -1,12 +1,11 @@
 
-
 pool:
   vmImage: ubuntu-16.04
 
 jobs:
 
   - deployment: pull_envs
-    displayName: Pull & store states of all envs
+    displayName: Pull all IVRs
     environment: pull
     strategy:
       runOnce:
@@ -16,14 +15,21 @@ jobs:
               persistCredentials: true
             - bash: |
                 ls -lah
+                
                 echo "building and running sync image..."
                 docker build -t ivr-sync .
-                docker run --rm ivr-sync babelforce-ivr-sync help
-                echo "creating a file..."
-                mkdir build
-                touch build/$(head -3 /dev/urandom | tr -cd '[:alnum:]' | cut -c -8).txt
-            - publish: $(Build.SourcesDirectory)/build
-              artifact: my_build
+                docker run --rm --mount type=bind,src=$(pwd)/data,dst=/sync/data ivr-sync ./pull-all.sh
+
+                echo "versioning new IVR states..."
+                git config --global user.email "wjconnor123@gmail.com"
+                git config --global user.name "William Connor"
+                git status
+                git add . && git commit -m "added a file [skip ci]"
+                git push origin HEAD:master
+
+
+            # - publish: $(Build.SourcesDirectory)/build
+            #   artifact: my_build
 
   # # download build artifact and put in version control 
   # - job: commit_file
