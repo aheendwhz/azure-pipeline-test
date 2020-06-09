@@ -13,8 +13,8 @@
         "baseUrl": "{{api_url}}/api/v2",
         "defaults": {
           "body": null,
-          "headers": null,
           "uri": null,
+          "headers": null,
           "contentType": "application/json",
           "method": "get",
           "params": null
@@ -31,8 +31,8 @@
           },
           "basic": null,
           "body": null,
-          "headers": null,
           "uri": null,
+          "headers": null,
           "contentType": "application/json",
           "method": "get",
           "params": null
