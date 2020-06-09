@@ -258,6 +258,25 @@
         "triggers": []
       },
       "@id": "0570637563c1461695f51c5fb13f6d61"
+    },
+    {
+      "name": "NEW APP",
+      "friendlyName": null,
+      "enabled": true,
+      "module": "inputReader",
+      "tags": [],
+      "settings": {
+        "flowEndApplication": null,
+        "prompts": [],
+        "resultVariableName": "answer",
+        "terminationDigit": "NONE",
+        "readTimeout": 3,
+        "min": 1,
+        "max": 2,
+        "maxRetries": 2,
+        "ignoreNoInput": true
+      },
+      "@id": "2e7bf3f40f004190b90f7521c7abac1d"
     }
   ]
 }

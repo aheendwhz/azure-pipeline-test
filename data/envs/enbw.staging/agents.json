@@ -3,6 +3,16 @@
   "url": "/api/v2/agents",
   "items": [
     {
+      "sourceId": "0e76949f91894c13b5e3d78fc5ac976a",
+      "agentSource": "internal",
+      "name": "ANOTHER AGENT, PLZ SYNC",
+      "number": null,
+      "enabled": false,
+      "email": null,
+      "tags": [],
+      "@id": "1043e460862a479798198d0acabcdf97"
+    },
+    {
       "sourceId": "e6c1051c8d8c438fbf7fe0adf8094d00",
       "agentSource": "internal",
       "name": "BAD AGENT",
